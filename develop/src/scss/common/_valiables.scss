@@ -1,0 +1,74 @@
+// Document Path
+$DOCUMENT_PATH: '../';
+
+// Font path
+$FONT_PATH: '#{$DOCUMENT_PATH}font/';
+
+// Image Path
+$IMG_PATH: '#{$DOCUMENT_PATH}img';
+//ex: background: url(#{$IMG_PATH}/
+
+// Base Width
+$width-base: 1440px;
+
+// Base Color
+$color-primary  : #ffffff;
+$color-secondary: #FF8C00;
+$color-tertiary : #404040;
+$color-text-base: $color-tertiary;
+
+// Base Font Size
+$font-base-size: 16px;
+$font-size-30: 30px;
+$font-size-24: 24px;
+$font-size-20: 20px;
+$font-size-18: 18px;
+$font-size-16: 16px;
+$font-size-14: 14px;
+$font-size-12: 12px;
+$font-size-11: 11px;
+$font-size-10: 10px;
+
+// Base Font Family
+$font-family-base: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', '游ゴシック', YuGothic, 'メイリオ', Meiryo, sans-serif;
+
+$font-family-helvetica-neue: 'Helvetica Neue' , Helvetica , Arial , Verdana , Roboto , '游ゴシック' , 'Yu Gothic' , '游ゴシック体' , 'YuGothic' , 'ヒラギノ角ゴ Pro W3' , 'Hiragino Kaku Gothic Pro' , 'Meiryo UI' , 'メイリオ' , Meiryo , 'ＭＳ Ｐゴシック' , 'MS PGothic' , sans-serif;
+
+$font-family-yu-gothic: '游ゴシック' , 'Yu Gothic' , '游ゴシック体' , 'YuGothic' , 'ヒラギノ角ゴ Pro W3' , 'Hiragino Kaku Gothic Pro' , 'Meiryo UI' , 'メイリオ' , Meiryo , 'ＭＳ Ｐゴシック' , 'MS PGothic', 'Helvetica Neue' , Helvetica , Arial , Verdana , Roboto , sans-serif;
+
+$font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+
+$font-family-raleway: Raleway,'Helvetica Neue' , Helvetica , Arial , Verdana , Roboto , '游ゴシック' , 'Yu Gothic' , '游ゴシック体' , 'YuGothic' , 'ヒラギノ角ゴ Pro W3' , 'Hiragino Kaku Gothic Pro' , 'Meiryo UI' , 'メイリオ' , Meiryo , 'ＭＳ Ｐゴシック' , 'MS PGothic' , sans-serif;
+
+
+// Category Color
+$cat-color-purple: #895ea8;
+
+// Media Query
+$mq-breakpoints: (
+  'sp_min': 480px,
+  'sp_max': 599px,
+  'tb_min': 600px,
+  'tb_max': 959px,
+  'pc_sm_max': 1439px,
+  'pc_lg': $width-base,
+);
+
+$ssmall: "(max-width:320px)";
+$xsmall: "(max-width:375px)";
+$small:  "(max-width:768px)";
+$middle: "(max-width:980px)";
+$large:  "(max-width:1440px)";
+$largeMax: "(min-width:1441px)";
+/*
+@media #{$largeMax} {
+}
+@media #{$large} {
+}
+@media #{$middle} {
+}
+@media #{$small} {
+}
+@media #{$ssmall} {
+}
+*/

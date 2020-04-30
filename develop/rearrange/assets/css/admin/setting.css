@@ -1,0 +1,104 @@
+
+#rearrange-setting {
+    -webkit-animation: fadeIn 1s ease 0s 1 normal;
+    /* スマホタップ時の色変化無効化 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    animation: fadeIn 1s ease 0s 1 normal;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    font: 200 100% "Noto Sans Japanese", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+    /* Chromeの文字の太さ調整*/
+    -webkit-font-smoothing: antialiased;
+    /* Firefoxの文字の太さ調整 */
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.1em;
+    margin: 0 18px 0 0;
+    padding: 20px 30px;
+    /*-webkit-backface-visibility: hidden !important;*/
+    /*backface-visibility: hidden !important;*/
+}
+
+#rearrange-setting > h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.g-tab-menu {
+    margin: 40px 0;
+}
+
+.g-tab-menu > li {
+    /*background-color: #fff;*/
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    text-align: center;
+    width: auto;
+    margin: 0 35px;
+}
+
+.g-tab-menu > li > a {
+    color: #333;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.g-current::after {
+    background-color: #ddd;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: calc(100% + 30px);
+}
+
+#rearrange-setting .form-table th {
+    width: 300px;
+}
+
+#rearrange-setting .social label[for^="media-account"] {
+    display: inline-block;
+    width: 100px;
+}
+
+#rearrange-form {
+    background-color: #fff;
+    padding: 0 14px;
+}
+
+#rearrange-form > h2 {
+    font-size: 1.4rem;
+    margin-top: 50px;
+}
+
+#rearrange-form img {
+    margin-top: 10px;
+}
+
+#rearrange-form textarea {
+    padding: 10px 12px;
+    width: 70%;
+}
+
+#rearrange-form .form-table th {
+    font-weight: 300;
+    padding: 10px 10px 7px 0;
+}
+
+#rearrange-form .form-table td {
+    padding: 10px 10px;
+    vertical-align: top;
+}
+
+#rearrange-form .form-table th > p {
+    color: #999;
+    font-size: 0.7rem;
+    margin: 3px 0;
+}
+
+#rearrange-form #submit {
+    font-weight: 600;
+}

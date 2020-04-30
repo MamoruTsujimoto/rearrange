@@ -1,0 +1,73 @@
+// Border Radius
+@mixin border-radius($value: 20) {
+  -webkit-border-radius: #{$value}px;
+     -moz-border-radius: #{$value}px;
+      -ms-border-radius: #{$value}px;
+          border-radius: #{$value}px;
+}
+
+// Box Shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin head-line($size: 1px, $type: solid, $color: #000, $padding: 0) {
+  border-left: $size $type $color;
+  padding: $padding;
+}
+
+// Output of font size
+@mixin font-size($size, $line: 24) {
+  $rem: $size / 10;
+  $line-size: $line / $size;
+  font-size: #{$size}px;
+  font-size: #{$rem}rem;
+  line-height: $line-size;
+}
+
+@mixin mq($breakpoint: pc_lg, $rule: min, $subtraction: false) {
+  $breakpoint: map_get($mq-breakpoints, $breakpoint);
+  @if $rule == max and $subtraction {
+    $breakpoint: $breakpoint - 1;
+  }
+  @media screen and (#{$rule}-width: $breakpoint) {
+    @content;
+  }
+}
+/* 480px〜599px：SP横
+@include mq(sp_min) {
+  @include mq(sp_max, max, false) {
+    p {color: #93c01e}
+  }
+}
+------------------------------ */
+
+/* 600px〜959px：タブレット
+@include mq(tb_min) {
+  @include mq(tb_max, max, false) {
+    p {color: #008d36}
+  }
+}
+------------------------------ */
+
+/* 960px〜1279px：小型PC
+@include mq(pc_sm_min) {
+  @include mq(pc_sm_max, max, false) {
+    p {color: #00a099}
+  }
+}
+------------------------------ */
+
+/* 1280px〜：大型PC
+@include mq(pc_lg) {
+  p {color: #00a099}
+}
+------------------------------ */

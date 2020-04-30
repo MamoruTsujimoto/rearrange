@@ -1,0 +1,39 @@
+extends /layouts/_layout
+
+block var
+  - metas = {}
+  - metas.type = 'website'
+  - metas.locale = 'ja_JP'
+  - metas.url = 'index.html'
+  - metas.title = 'REARRANGE'
+  - metas.description = 'Top Description'
+  - metas.image = 'Image_Url'
+  - metas.image_width = '1200'
+  - metas.image_height = '500'
+  - metas.fb_appid = 'appid_123456789000'
+  - metas.card = 'summary_large_image'
+  - metas.site = 'index.html'
+  - metas.creator = '@'
+
+block title
+  title #{metas.title}
+
+block append meta
+  +meta(metas)
+  include /includes/_inc_meta_facebook
+  include /includes/_inc_meta_twitter
+  +inc_meta_facebook(metas)
+  +inc_meta_twitter(metas)
+
+block navi
+  -var pageID = 'page-top';
+
+block content
+  include /layouts/_header
+  main
+    include /component/_new-story
+
+    include /component/_diary
+
+    include /component/_wordpress
+

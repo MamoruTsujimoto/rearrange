@@ -1,0 +1,11 @@
+.archive {
+  .section {
+    &-title {
+      margin: 50px auto 50px;
+
+      @media #{$small} {
+        padding: 0;
+      }
+    }
+  }
+}

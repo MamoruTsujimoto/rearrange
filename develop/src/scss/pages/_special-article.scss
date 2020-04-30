@@ -1,0 +1,47 @@
+#page-special-article {
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 230px;
+    padding: 13px 0 13px;
+    background-color: rgba(0,0,0,0.6);
+
+    .wrapper {
+      width: 924px;
+      margin: 0 auto;
+    }
+  }
+
+  .label {
+    margin-bottom: 6px;
+    border-bottom: 1px solid #707070;
+
+    p {
+      margin: 0;
+
+      @include font-size(25,50);
+
+      color: #fff;
+
+      strong {
+        margin-right: 20px;
+        @include font-size(32,50);
+
+        font-family: $font-family-helvetica-neue;
+        font-weight: bold;
+        color: #F5A343;
+      }
+
+      span {
+        vertical-align: 1px;
+      }
+    }
+  }
+
+  h1 {
+    a {
+      color: #fff;
+    }
+  }
+}

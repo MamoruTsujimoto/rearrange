@@ -1,0 +1,36 @@
+//- layout.pug
+include ../config/_config
+block var
+block navi
+  -var pageID = 'top';
+  -var bodyClass = 'top';
+if pageID === 'top'
+  -var dir = './';
+else
+  -var dir = '../';
+
+doctype html
+html(lang="ja")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width')
+    meta(name='robots' content='noindex, nofollow')
+    block title
+      title #{site_info.title} - #{site_info.subtitle}
+
+    block meta
+      mixin meta(metas)
+        meta(name='description', content=metas.description)
+
+    block styles
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap')
+      link(rel='stylesheet' href=dir+'assets/css/style.css')
+
+  body(class=bodyClass)
+    div#global-wrapper
+      block content
+      block scripts
+      include /layouts/_footer
+    include /component/_loading
+    //- include /component/_back-content
+    include ../includes/_scripts

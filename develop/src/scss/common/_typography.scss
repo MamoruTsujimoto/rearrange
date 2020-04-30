@@ -1,0 +1,261 @@
+// Headings
+h1 {
+  @include font-size(32,50);
+}
+
+h2 {
+  @include font-size(22,50);
+}
+
+h3 {
+  @include font-size(20,32);
+}
+
+h4 {
+  @include font-size(16,28);
+}
+
+h5 {
+  @include font-size(14,28);
+}
+
+h6 {
+  @include font-size(14,28);
+}
+
+// Paragraph Text
+p {
+  @include font-size(16,30);
+}
+
+// Text Style
+.text {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-date {
+    color: #9B9B9B;
+    @include font-size(12,30);
+  }
+
+  &-cat {
+    @include font-size(12,15);
+
+    a {
+      color: $color-secondary;
+      font-weight: bold;
+    }
+  }
+}
+
+.member {
+  &.profile {
+    &-list {
+      .member {
+        &-name {
+          margin: 0 0 5px;
+
+          dt {
+            @include font-size(20,26);
+
+            font-weight: bold;
+          }
+
+          dd {
+            @include font-size(16,26);
+            font-weight: bold;
+          }
+        }
+    
+        &-notation {
+          dt {
+            @include font-size(14,26);
+          }
+
+          dd {
+            @include font-size(14,26);
+          }
+        }
+    
+        &-profile {
+          p {
+            margin: 0;
+            @include font-size(16,30);
+          }
+
+          &-link {
+            text-align: right;
+          }
+        }
+      }
+
+      a {
+        @include font-size(16,40);
+
+        text-decoration: underline;
+      }
+    }
+
+    &-detail {
+      .member {
+        &-name {
+          dt {
+            @include font-size(28,30);
+
+            font-weight: bold;
+          }
+
+          dd {
+            @include font-size(18,36);
+            font-weight: bold;
+          }
+        }
+
+        &-notation {
+          dt {
+            @include font-size(18,36);
+          }
+
+          dd {
+            @include font-size(18,36);
+          }
+        }
+    
+        &-profile {
+          @include font-size(16,30);
+        }
+      }
+    }
+
+    &-other {
+      .member {
+        &-name {
+          dt {
+            margin: 0 0 5px;
+
+            @include font-size(20,26);
+
+            font-weight: bold;
+          }
+
+          dd {
+            margin: 0 0 5px;
+
+            @include font-size(16,26);
+            font-weight: bold;
+          }
+        }
+
+        &-notation {
+          dt {
+            @include font-size(14,26);
+          }
+
+          dd {
+            margin: 0 0 8px;
+
+            @include font-size(14,26);
+          }
+        }
+      }
+
+      a {
+        @include font-size(16,40);
+        
+        text-decoration: underline;
+      }
+    }
+
+    &-sidebar {
+      .member {
+        &-name {
+          dt {
+            margin: 0 0 8px;
+
+            @include font-size(15,20);
+
+            font-weight: bold;
+          }
+        }
+
+        &-notation {
+          dt {
+            margin: 0 0 8px;
+
+            @include font-size(15,20);
+          }
+
+          dd {
+            @include font-size(15,20);
+          }
+        }
+
+        &-profile {
+          @include font-size(15,20);
+        }
+      }
+    }
+
+    &-comment {
+      .member {
+        &-name {        
+          dt {
+            @include font-size(20,32);
+
+            font-weight: bold;
+          }
+        }
+
+        &-notation {
+          dt {
+            @include font-size(12,18);
+            
+          }
+
+          dd {
+            @include font-size(12,18);
+          }
+        }
+
+        &-profile {
+          @include font-size(16,32);
+        }
+      }
+    }
+
+    &-article {
+      .member {
+        &-name {
+          dt {
+            @include font-size(20,32);
+
+            font-weight: bold;
+          }
+        }
+
+        &-notation {
+          dt {
+            @include font-size(12,32);
+          }
+
+          dd {
+            @include font-size(12,32);
+          }
+        }
+
+        &-profile {
+          @include font-size(16,32);
+        }
+      }
+    }
+  }
+}

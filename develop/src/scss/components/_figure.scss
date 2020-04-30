@@ -1,0 +1,12 @@
+.figure {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  &.no-image {
+    background-image: url(#{$IMG_PATH}/no-image.svg);
+    background-size: 100px auto;
+    background-position: center center;
+    border: 1px solid #ddd;
+  }
+}

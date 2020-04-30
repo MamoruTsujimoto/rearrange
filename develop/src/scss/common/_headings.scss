@@ -1,0 +1,29 @@
+// Headings Line
+.hd {
+  margin-bottom: 8px;
+
+  @include font-size(20,20);
+
+  font-weight: bold;
+}
+
+.line {
+  padding: 0 0 12px;
+  border-style: solid;
+
+  &.bold {
+    border-width: 0 0 3px 0;
+
+    &.orange {
+      border-color: $color-secondary;
+    }
+  }
+
+  &.thin {
+    border-width: 0 0 1px 0;
+
+    &.black {
+      border-color:#707070;
+    }
+  }
+}

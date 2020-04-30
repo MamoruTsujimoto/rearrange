@@ -1,0 +1,63 @@
+extends /layouts/_layout
+
+block var
+  - metas = {}
+  - metas.type = 'website'
+  - metas.locale = 'ja_JP'
+  - metas.url = 'index.html'
+  - metas.title = 'REARRANGE'
+  - metas.description = 'Top Description'
+  - metas.image = 'Image_Url'
+  - metas.image_width = '1200'
+  - metas.image_height = '500'
+  - metas.fb_appid = 'appid_123456789000'
+  - metas.card = 'summary_large_image'
+  - metas.site = 'index.html'
+  - metas.creator = '@'
+
+block title
+  title #{metas.title}
+
+block append meta
+  +meta(metas)
+  include /includes/_inc_meta_facebook
+  include /includes/_inc_meta_twitter
+  +inc_meta_facebook(metas)
+  +inc_meta_twitter(metas)
+
+block navi
+  -var pageID = 'page-top';
+
+block content
+  include /layouts/_header
+  main
+    section.story-past
+      h1#diary.section-title diary
+      div.article-wrapper
+        - for (var i=1; i<22; i++)
+          - var x = i;
+          article(id='story0'+x)
+            a(href="/post/")
+              if (x <= 9)
+                div.story-figure.figure(style='background-image: url(/assets/img/figure/figure-0'+ x +'.jpg')
+              else if (x >= 10 && x <= 13)
+                div.story-figure.figure(style='background-image: url(/assets/img/figure/figure-'+ x +'.jpg')
+              else
+                div.story-figure.figure(style='background-image: url(/assets/img/figure/figure-10.jpg')
+              div.story-entrance
+                span.story-category WordPress
+                h1
+                  if (i == 2)
+                    | SiteGuard有効時にログイン
+                  else
+                    | SiteGuard有効時にログインが404エラー
+                div.story-information
+                  ul.story-status
+                    li
+                      span.story-publish October 14, 2019 - 22℃
+                  if (i == 2)
+                    p 急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。急にと思ったが、そもそもの機能を理解してなかった。急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。急にと思ったが、そもそもの機能を理解してなかった。
+                  else
+                    p 急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。
+      div.btn.btn-viewall
+        a(href="archive/") view all

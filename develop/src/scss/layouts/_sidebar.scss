@@ -1,0 +1,21 @@
+#sidebar {
+  width: 336px;
+
+  h3 {
+    font-family: $font-family-helvetica-neue;
+
+    @include font-size(24,28);
+  }
+
+  .sidebar {
+    &-wrapper {
+      padding: 25px 22px 0;
+    }
+  }
+
+  .card {
+    &-sidebar {
+      margin: 0 0 36px;
+    }
+  }
+}

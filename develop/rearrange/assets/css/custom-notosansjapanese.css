@@ -1,0 +1,22 @@
+/*---------------------------------------------------------------------------
+ * Custom Noto Sans Japanese
+ *---------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    font-weight: 200;
+    src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff) format('woff')
+}
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff')
+}
+@font-face {
+    font-family: 'Noto Sans Japanese';
+    font-style: normal;
+    /* 500で設定してるとnoto sans japaneseをoffにした時Chrome,Firefoxで太さが足りないため600に変更 */
+    font-weight: 600;
+    src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff) format('woff')
+}
