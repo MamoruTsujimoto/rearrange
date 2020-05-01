@@ -274,7 +274,9 @@
     vertical-align: middle;
     color: #404040;
     font-weight: 400;
+
     @include font-size(32,42);
+
     transition: 0.3s ease-in-out;
     word-break: break-all;
 
