@@ -21,7 +21,7 @@ services:
     volumes:
       - ./app/wordpress/wp-config.php:/var/www/html/wp-config.php
       - ./app/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - ./develop/${THEME_NAME}:/var/www/html/wp-content/themes/${THEME_NAME}
+      - ../${THEME_NAME}:/var/www/html/wp-content/themes/${THEME_NAME}
 
   db:
     image: mysql:5.7.19
