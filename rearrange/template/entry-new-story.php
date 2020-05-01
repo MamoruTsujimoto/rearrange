@@ -7,6 +7,7 @@ $custom_post = new WP_Query($args);
 
 <?php if ( $custom_post->have_posts() ) : ?>
 <?php while ( $custom_post->have_posts() ) : $custom_post->the_post(); ?>
+<?php if (is_sticky(get_the_ID())): ?>
 <section id="new-story">
   <article id="story-<?php echo get_the_ID(); ?>">
     <?php $url = get_the_permalink(); ?>
@@ -48,8 +49,7 @@ $custom_post = new WP_Query($args);
     </a>
   </article>
 </section>
+<?php endif; ?>
 <?php endwhile; ?>
 <?php wp_reset_postdata(); ?>
-<?php else: ?>
-<p>記事が見つかりませんでした。</p>
 <?php endif; ?>
