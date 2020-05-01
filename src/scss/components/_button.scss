@@ -52,3 +52,25 @@
     }
   }
 }
+
+#up-to-top {
+  position: fixed;
+  right: 2px;
+  bottom: 44px;
+  width: 50px;
+  height: 50px;
+  background: #000 url(#{$IMG_PATH}/icon/icon-arrow-top.svg) center center no-repeat;
+  background-size: 15px auto;
+  cursor: n-resize;
+  opacity: 0;
+  transition: all 500ms 0s ease;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  @media #{$small} {
+    right: 3px;
+    bottom: 46px;
+  }
+}

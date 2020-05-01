@@ -33,6 +33,30 @@ imgLoad.on( 'always', function( instance) {
   console.log('Loaded');
 });
 
+// Up To Top
+const up = document.querySelector('#up-to-top');
+
+function getScrolled() {
+  return ( window.pageYOffset !== undefined ) ? window.pageYOffset: document.documentElement.scrollTop;
+}
+
+window.onscroll = function() {
+  ( getScrolled() > 500 ) ? up.classList.add( 'is-active' ): up.classList.remove( 'is-active' );
+};
+
+function scrollToTop() {
+  var scrolled = getScrolled();
+  window.scrollTo( 0, Math.floor( scrolled / 2 ) );
+  if ( scrolled > 0 ) {
+    window.setTimeout( scrollToTop, 30 );
+  }
+};
+
+if(up !== null) {
+  up.onclick = function() {
+    scrollToTop();
+  };;
+}
 // imagesLoaded( document.querySelector('main'), function( instance ) {
 //   console.log('all images are loaded');
 // });
