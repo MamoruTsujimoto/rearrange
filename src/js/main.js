@@ -4,6 +4,7 @@ $(function() {
 
 window.onload = function() {
   const spinner = document.getElementById('loading');
+
   setTimeout(function(){
     spinner.classList.add('loaded');
   },3000);

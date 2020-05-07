@@ -1,15 +1,40 @@
 #back-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 1280px;
-  height: 761px;
+  margin-top: 50px;
 
-  img {
-    width: 100%;
-    opacity: .8;
+  ul {
+    padding: 0 50px;
+    color: #BBBBBB;
+
+    li {
+      text-transform: uppercase;
+      letter-spacing: .5em;
+
+      a {
+        color: #BBBBBB;
+      }
+
+      span {
+        &:after {
+          content: ':';
+          margin-right: 5px;
+        }
+      }
+
+      ul {
+        margin: 10px 0 50px;
+        padding: 0 30px;
+      }
+
+      ul li {
+        margin: 0 0 10px;
+        @include font-size(14,14);
+        letter-spacing: 0;
+
+        &:before {
+          content: '-';
+          margin-right: 5px;
+        }
+      }
+    }
   }
 }

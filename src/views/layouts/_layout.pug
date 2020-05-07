@@ -15,6 +15,12 @@ html(lang="ja")
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width')
     meta(name='robots' content='noindex, nofollow')
+    link(rel="shortcut icon" href="/assets/img/favicon.ico")
+    link(rel='apple-touch-icon' sizes='180x180' href='/assets/img/apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='/assets/img/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='/assets/img/favicon-16x16.png')
+    meta(name='msapplication-TileColor' content='#da532c')
+    meta(name='theme-color' content='#000000')
     block title
       title #{site_info.title} - #{site_info.subtitle}
 
@@ -32,5 +38,5 @@ html(lang="ja")
       block scripts
       include /layouts/_footer
     include /component/_loading
-    //- include /component/_back-content
+    include /component/_back-content
     include ../includes/_scripts
