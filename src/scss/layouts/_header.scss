@@ -1,8 +1,12 @@
 // Header
 #global-header {
   position: relative;
-  border-bottom: 1px solid #acacac;
+  border-bottom: 1px solid #d0d0d4;
   z-index: 1;
+
+  @media #{$small} {
+    border-bottom: none;
+  }
 
   #wellcome-to {
     padding: 20px 20px 18px;
