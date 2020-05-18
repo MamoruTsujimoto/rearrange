@@ -23,9 +23,6 @@ $cat = get_the_category($post->ID)[0];
     <?php
     if ( $rearrange['has_post_thumbnail'] ) :
       $rearrange['thumbnail_url'] = get_the_post_thumbnail_url();
-    else:
-      $rearrange['thumbnail_url'] = get_theme_file_uri( '/images/no-image-rm.png' );
-    endif;
     ?>
     <figure class="article-eyecatch cl photo">
       <div class="article-eyecatch-image" style="background-image: url(<?php echo $rearrange['thumbnail_url']; ?>);"></div>
@@ -33,6 +30,7 @@ $cat = get_the_category($post->ID)[0];
       <figcaption><?php echo $caption; ?></figcaption>
       <?php endif; ?>
     </figure>
+    <?php endif; ?>
   </header>
 
   <div class="article-body">
