@@ -3,7 +3,7 @@ global $rearrange;
 $cat_diary = get_category_by_slug("diary");
 $cat_diary_name = $cat_diary->name;
 $cat_diary_id = $cat_diary->term_id;
-$args = array( 'cat'=> $cat_diary_id, 'posts_per_page' => 3, 'offset' => 1, 'order'=> 'DESC' );
+$args = array( 'cat'=> $cat_diary_id, 'posts_per_page' => 3, 'post__not_in' => get_option( 'sticky_posts' ), 'order'=> 'DESC' );
 $custom_post = new WP_Query($args);
 ?>
 
