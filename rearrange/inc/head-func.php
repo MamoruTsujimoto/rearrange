@@ -282,7 +282,7 @@ add_action( 'wp_enqueue_scripts', function() {
     $theme = wp_get_theme();
 
     if ( isset( $rearrange['css']['load_parent_style'] ) ) {
-        wp_register_style( 'Raleway', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&amp;display=swap', [], $theme->Version );
+        wp_register_style( 'Raleway', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&amp;family=Metrophobic&amp;family=Neuton:wght@300&amp;display=swap', [], $theme->Version );
         wp_enqueue_style( 'Raleway' );
         wp_register_style( 'rearrange', PARENT_CSS . '/style.css', [], $theme->Version );
         wp_enqueue_style( 'rearrange' );
