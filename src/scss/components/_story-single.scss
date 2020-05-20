@@ -1,4 +1,8 @@
 .single {
+  #global-header {
+    border-bottom: 1px solid #D0D0D4;
+  }
+
   .article {
     width: 980px;
     margin: 0 auto;
@@ -68,7 +72,6 @@
     }
 
     .article-eyecatch {
-      clear: both;
       transition: 0.5s;
 
       &-image {
@@ -82,7 +85,9 @@
           border: 1px solid #D0D0D4;
 
           @media #{$small} {
+            margin-top: 10px;
             border: none;
+            border-top: 1px solid #E9E9EB;
           }
         }
       }
@@ -94,10 +99,20 @@
         text-align: right;
         @include font-size(12,12);
         font-weight: bold;
+
+        @media #{$small} {
+          opacity: 1;
+          color: #fff;
+          background-color: #000;
+        }
       }
 
       &:hover {
         box-shadow: 0 10px 90px -30px rgba(0,0,0,0.4);
+
+        @media #{$small} {
+          box-shadow: none;
+        }
 
         figcaption {
           opacity: 1;
