@@ -41,7 +41,12 @@
         display: inline-block;
         margin: 0 8px;
         color: #fff;
-        font-family: 'Quattrocento Sans', sans-serif;
+        font-family: 'Metrophobic', serif;
+        // font-family: 'Raleway';
+        // font-family: 'Neuton', serif;
+
+        @include font-size(20,20);
+
         @for $i from 0 through 8 {
           &:nth-child(#{$i + 1}) {
             filter: blur(0px);

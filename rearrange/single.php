@@ -14,7 +14,7 @@ $cat = get_the_category($post->ID)[0];
       <?php the_title(); ?>
     </h1>
 
-    <div class="article-info cl">
+    <div class="article-info">
       <ul>
         <li><strong class="date"><?php echo get_post_time('F d, Y'); ?></strong></li>
         <li><?php echo $cat->name; ?></li>
@@ -23,9 +23,10 @@ $cat = get_the_category($post->ID)[0];
     <?php
     if ( $rearrange['has_post_thumbnail'] ) :
       $rearrange['thumbnail_url'] = get_the_post_thumbnail_url();
+      $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
     ?>
     <figure class="article-eyecatch cl photo">
-      <div class="article-eyecatch-image" style="background-image: url(<?php echo $rearrange['thumbnail_url']; ?>);"></div>
+      <div class="article-eyecatch-image<?php echo $outline; ?>" style="background-image: url(<?php echo $rearrange['thumbnail_url']; ?>);"></div>
       <?php if($caption = get_post(get_post_thumbnail_id())->post_excerpt): ?>
       <figcaption><?php echo $caption; ?></figcaption>
       <?php endif; ?>

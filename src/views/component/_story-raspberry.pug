@@ -1,0 +1,25 @@
+section.story-past
+  h1.section-title Raspberry Pi
+  div.article-wrapper
+    - for (var i=1; i<7; i++)
+      - var x = i;
+      article(id='story0'+x class='other')
+        a(href="post/")
+          div.story-figure.figure(style='background-image: url(/assets/img/logo-rpi.png')
+          div.story-entrance
+            span.story-category RPi
+            h1
+              if (i == 6)
+                | SiteGuard有効時にログイン
+              else
+                | SiteGuard有効時にログインが404エラー
+            div.story-information
+              ul.story-status
+                li
+                  span.story-publish October 14, 2019 - 22℃
+              if (i == 6)
+                p 急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。急にと思ったが、そもそもの機能を理解してなかった。急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。急にと思ったが、そもそもの機能を理解してなかった。
+              else
+                p 急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。
+  div.btn.btn-viewall
+    a(href="archive/") view all

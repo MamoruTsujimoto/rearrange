@@ -1,0 +1,235 @@
+.single {
+  .article {
+    width: 980px;
+    margin: 0 auto;
+    border: none;
+
+    @media #{$small} {
+      width: 100%;
+    }
+
+    a {
+      display: inline;
+    }
+
+    header {
+      &:after {
+        content: '⋯';
+        display: block;
+        margin: 30px 0 20px;
+        text-align: center;
+        color: #333;
+      }
+    }
+
+    h1+*, h2+*, h3+*, h4+*, h5+*, h6+* {
+      margin-top: .8em;
+    }
+
+    h1 {
+      display: block;
+      margin: 40px 0;
+      color: #404040;
+      text-align: center;
+    }
+
+    .article-info {
+      display: flex;
+      justify-content: flex-end;
+
+      @media #{$small} {
+        float: none;
+      }
+
+      ul {
+        margin-right: 10px;
+
+        @media #{$small} {
+          width: auto;
+        }
+
+        li {
+          display: inline-block;
+          margin-right: 30px;
+
+          @include font-size(12,12);
+
+          vertical-align: top;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:before {
+            content: '-';
+          }
+        }
+      }
+    }
+
+    .article-eyecatch {
+      clear: both;
+      transition: 0.5s;
+
+      &-image {
+        width: 100%;
+        height: 500px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        &.outline {
+          border: 1px solid #D0D0D4;
+        }
+      }
+
+      figcaption {
+        padding: 15px 10px;
+        opacity: 0;
+        transition: 0.5s;
+        text-align: right;
+        @include font-size(12,12);
+        font-weight: bold;
+      }
+
+      &:hover {
+        box-shadow: 0 10px 90px -30px rgba(0,0,0,0.4);
+
+        figcaption {
+          opacity: 1;
+          color: #fff;
+          background-color: #000;
+        }
+      }
+
+      .aligncenter {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .article-body {
+      clear: both;
+
+      hr {
+        margin: 30px 0;
+      }
+
+      a {
+        position: relative;
+        padding: 0 20px 1px 4px;
+        text-decoration: underline;
+        color: #d57339;
+        transition: all 0.2s ease-out;
+        z-index: 2;
+
+        &:hover {
+          color: #fff;
+          background-color: #d57339;
+          text-decoration: none;
+
+          &:after {
+            color: #fff;
+          }
+        }
+
+        &:after {
+          content: "\e900";
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          font-family: 'icomoon' !important;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+
+          @include font-size(12,12);
+
+          color: #333;
+
+          text-transform: none;
+          line-height: 1;
+
+          /* Better Font Rendering =========== */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      p {
+        @include font-size(17,32);
+        letter-spacing: .025em;
+
+        a {
+          &:after {}
+        }
+      }
+
+      pre {
+        margin: 20px 0;
+        padding: 10px 10px;
+        background-color: #242424;
+        color: #fff;
+
+        @include font-size(14,26);
+
+        cursor: text;
+
+        @media #{$small} {
+          overflow: auto;
+        }
+      }
+
+      ul,ol {
+        margin: 20px 0;
+        padding-left: 30px;
+        list-style: circle;
+
+        li {
+          margin: 10px 0;
+        }
+      }
+
+      table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+
+        caption {
+          padding: 8px 0;
+          caption-side: bottom;
+        }
+
+        th,td {
+          padding: 10px;
+          border: 1px solid #dcd6d9;
+        }
+
+        th {
+          background-color: #e7e7eb;
+          text-align: center;
+        }
+      }
+
+      strong {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 5px;
+          border: 3px solid rgba(0,0,0,0.1);
+        }
+      }
+    }
+  }
+}

@@ -41,7 +41,7 @@ block content
           li 日記
 
       figure.article-eyecatch.cl.photo
-        div(class="article-eyecatch-image" style="background-image: url("+dir+"/assets/img/figure-02.jpg")
+        div(class="article-eyecatch-image outline" style="background-image: url("+dir+"/assets/img/figure/film-crux.jpg")
         figcaption Mountain: 2019-10-09
 
       div.article-body
@@ -143,3 +143,10 @@ block content
             :escape-html
               p { color: red }
               p { color: red }
+
+        figure.wp-block-embed-youtube.aligncenter.wp-block-embed.is-type-video.is-provider-youtube.wp-embed-aspect-16-9.wp-has-aspect-ratio
+          .wp-block-embed__wrapper
+            iframe(title='SINGULARITY | Cinematic Sound Effects Library' width='500' height='281' src='https://www.youtube.com/embed/t2mYNBmbFx4?feature=oembed' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen)
+          figcaption SINGULARITY | Cinematic Sound Effects Library
+
+        p 結果として、テストコードの public/tests/app_spec.js の記述が8ページ先で修正を行っていて、ハマっていた章では、問題なく表示されると記述されていたのでタイポなのか、本書の問題なのかじっくり間違い探しをしつつ、解決策を考える。

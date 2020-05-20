@@ -1,15 +1,18 @@
 section.story-past
-  h1#wordpress.section-title WordPress
+  h1.section-title diary
   div.article-wrapper
-    - for (var i=1; i<7; i++)
+    - for (var i=2; i<8; i++)
       - var x = i;
-      article(id='story0'+x class='wordpress')
+      article(id='story0'+x)
         a(href="post/")
-          div.story-figure.figure(style='background-image: url(/assets/img/wordpress-logo.png')
+          if (i == 2)
+            div.story-figure.figure.no-image
+          else
+            div.story-figure.figure(style='background-image: url(/assets/img/figure/figure-0'+ x +'.jpg')
           div.story-entrance
             span.story-category WordPress
             h1
-              if (i == 6)
+              if (i == 2)
                 | SiteGuard有効時にログイン
               else
                 | SiteGuard有効時にログインが404エラー
@@ -17,7 +20,7 @@ section.story-past
               ul.story-status
                 li
                   span.story-publish October 14, 2019 - 22℃
-              if (i == 6)
+              if (i == 2)
                 p 急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。急にと思ったが、そもそもの機能を理解してなかった。急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。急にと思ったが、そもそもの機能を理解してなかった。
               else
                 p 急に管理画面にログインできなくなったので、焦ってたらセキュリティを向上させる「SiteGurd」プラグインが自動的にログインページのURLを変更する仕組みのようだ。

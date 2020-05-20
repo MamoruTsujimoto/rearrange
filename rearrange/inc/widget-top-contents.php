@@ -42,21 +42,31 @@ class Widget_Top_Contents extends WP_Widget {
         <div class="article-wrapper">
           <?php while ( $custom_post->have_posts() ) : $custom_post->the_post(); ?>
           <?php if(!is_sticky(get_the_ID())): ?>
+          <?php
+          $term_id = get_the_category()[0]->term_id;
+          $use_category_figure = get_field('use_category_figure', 'term_'.$term_id);
+          $classname = ($use_category_figure === 'true') ? 'other' : '';
+          ?>
           <article id="story-<?php echo get_the_ID(); ?>" class="<?php echo $classname; ?>">
             <?php $url = get_permalink(); ?>
             <a href="<?php echo $url; ?>">
               <?php
-                if ( has_post_thumbnail() ) {
-                  $id = get_the_ID();
-                  $thumbnail = get_the_post_thumbnail_url($id);
+                if ( $use_category_figure ) {
+                  $thumbnail = get_field('category_figure', 'term_'.$term_id);
                   echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
                 } else {
-                  if ($classname !== 'wordpress') {
-                    echo '<div class="story-figure figure no-image"></div>'."\n";
-                  } else {
-                    $no_image    = get_theme_file_uri( '/assets/img/wordpress-logo.png' );
-                    $thumbnail = $no_image;
+                  if ( has_post_thumbnail() ) {
+                    $id = get_the_ID();
+                    $thumbnail = get_the_post_thumbnail_url($id);
                     echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                  } else {
+                    if ($classname !== 'wordpress') {
+                      echo '<div class="story-figure figure no-image"></div>'."\n";
+                    } else {
+                      $no_image    = get_theme_file_uri( '/assets/img/wordpress-logo.png' );
+                      $thumbnail = $no_image;
+                      echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                    }
                   }
                 }
               ?>

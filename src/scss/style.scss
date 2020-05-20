@@ -26,10 +26,15 @@
 @import './components/icon';
 @import './components/list';
 @import './components/loading';
-@import './components/modal';
+@import './components/menu';
+@import './components/overlay';
 @import './components/section';
-@import './components/new-story';
+@import './components/sound-wave';
 @import './components/story';
+@import './components/story-new';
+@import './components/story-other';
+@import './components/story-single';
+@import './components/wordpress';
 
 // Layouts
 @import './layouts/header';

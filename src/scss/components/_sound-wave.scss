@@ -1,0 +1,72 @@
+#sound-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 15px;
+  margin: auto;
+}
+
+.bar {
+  background: #222222;
+  bottom: 0;
+  height: 0px;
+  position: absolute;
+  width: 3px;
+  animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+  0% {
+     opacity: .35;
+      height: 3px;
+  }
+  100% {
+      opacity: 1;
+      height: 13px;
+  }
+}
+
+.bar:nth-child(1)  { left: 1px; }
+.bar:nth-child(2)  { left: 5px; }
+.bar:nth-child(3)  { left: 9px; }
+.bar:nth-child(4)  { left: 13px; }
+.bar:nth-child(5)  { left: 17px; }
+.bar:nth-child(6)  { left: 21px; }
+.bar:nth-child(7)  { left: 25px; }
+.bar:nth-child(8)  { left: 29px; }
+.bar:nth-child(9)  { left: 33px; }
+.bar:nth-child(10) { left: 37px; }
+.bar:nth-child(11) { left: 41px; }
+.bar:nth-child(12) { left: 45px; }
+.bar:nth-child(13) { left: 49px; }
+.bar:nth-child(14) { left: 53px; }
+.bar:nth-child(15) { left: 57px; }
+.bar:nth-child(16) { left: 61px; }
+.bar:nth-child(17) { left: 65px; }
+.bar:nth-child(18) { left: 69px; }
+.bar:nth-child(19) { left: 73px; }
+.bar:nth-child(20) { left: 77px; }
+
+#sound-wave.start .bar:nth-child(1)  { animation-duration: 474ms; }
+#sound-wave.start .bar:nth-child(2)  { animation-duration: 433ms; }
+#sound-wave.start .bar:nth-child(3)  { animation-duration: 407ms; }
+#sound-wave.start .bar:nth-child(4)  { animation-duration: 458ms; }
+#sound-wave.start .bar:nth-child(5)  { animation-duration: 400ms; }
+#sound-wave.start .bar:nth-child(6)  { animation-duration: 427ms; }
+#sound-wave.start .bar:nth-child(7)  { animation-duration: 461ms; }
+#sound-wave.start .bar:nth-child(8)  { animation-duration: 219ms; }
+#sound-wave.start .bar:nth-child(9)  { animation-duration: 487ms; }
+#sound-wave.start .bar:nth-child(10) { animation-duration: 342ms; }
+
+#sound-wave.start .bar:nth-child(11) { animation-duration: 444ms; }
+#sound-wave.start .bar:nth-child(12) { animation-duration: 403ms; }
+#sound-wave.start .bar:nth-child(13) { animation-duration: 407ms; }
+#sound-wave.start .bar:nth-child(14) { animation-duration: 448ms; }
+#sound-wave.start .bar:nth-child(15) { animation-duration: 410ms; }
+#sound-wave.start .bar:nth-child(16) { animation-duration: 487ms; }
+#sound-wave.start .bar:nth-child(17) { animation-duration: 411ms; }
+#sound-wave.start .bar:nth-child(18) { animation-duration: 419ms; }
+#sound-wave.start .bar:nth-child(19) { animation-duration: 487ms; }
+#sound-wave.start .bar:nth-child(20) { animation-duration: 402ms; }

@@ -1,0 +1,17 @@
+.story {
+  &-past {
+    article {
+      &.other {
+        min-height: 610px;
+
+        .story-figure {
+          height: 285px;
+          padding-top: 76.407506702%;
+          background-position: center center;
+          background-size: 100px auto;
+          background-color: #f9f9f9;
+        }
+      }
+    }
+  }
+}

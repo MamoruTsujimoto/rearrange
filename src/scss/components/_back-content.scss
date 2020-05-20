@@ -1,37 +1,35 @@
 #back-content {
-  margin-top: 50px;
+  margin-top: 80px;
 
   ul {
     padding: 0 50px;
     color: #BBBBBB;
 
     li {
+      margin: 0 0 20px;
       text-transform: uppercase;
-      letter-spacing: .5em;
+      counter-increment: section;
+
+      &:before {
+        content: "0" counter(section);
+        margin-right: 6px;
+        vertical-align: 14px;
+        letter-spacing: 0;
+        color: #91989F;
+
+        @include font-size(11,11);
+      }
 
       a {
         color: #BBBBBB;
       }
 
       span {
+        @include font-size(16,16);
+        letter-spacing: .5em;
+
         &:after {
           content: ':';
-          margin-right: 5px;
-        }
-      }
-
-      ul {
-        margin: 10px 0 50px;
-        padding: 0 30px;
-      }
-
-      ul li {
-        margin: 0 0 10px;
-        @include font-size(14,14);
-        letter-spacing: 0;
-
-        &:before {
-          content: '-';
           margin-right: 5px;
         }
       }

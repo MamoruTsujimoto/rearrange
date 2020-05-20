@@ -12,19 +12,13 @@ $custom_post = new WP_Query($args);
   <h1 class="section-title" id="diary"><?php echo $cat_diary_name; ?></h1>
   <div class="article-wrapper">
     <?php while ( $custom_post->have_posts() ) : $custom_post->the_post(); ?>
-    <article id="story-<?php echo get_the_ID(); ?>" class="wordpress">
+    <article id="story-<?php echo get_the_ID(); ?>" class="other">
       <?php $url = get_permalink(); ?>
       <a href="<?php echo $url; ?>">
         <?php
-          if ( has_post_thumbnail() ) {
-            $id = get_the_ID();
-            $thumbnail = get_the_post_thumbnail_url($id);
-            echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
-          } else {
-            $no_image    = get_theme_file_uri( '/assets/img/wordpress-logo.png' );
-            $thumbnail = $no_image;
-            echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
-          }
+        $no_image    = get_theme_file_uri( '/assets/img/wordpress-logo.png' );
+        $thumbnail = $no_image;
+        echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
         ?>
         <div class="story-entrance">
           <?php
