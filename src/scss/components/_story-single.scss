@@ -80,6 +80,10 @@
 
         &.outline {
           border: 1px solid #D0D0D4;
+
+          @media #{$small} {
+            border: none;
+          }
         }
       }
 
