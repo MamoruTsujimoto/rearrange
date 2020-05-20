@@ -22,7 +22,11 @@ $cat = get_the_category($post->ID)[0];
     </div>
     <?php
     if ( $rearrange['has_post_thumbnail'] ) :
-      $rearrange['thumbnail_url'] = get_the_post_thumbnail_url();
+      $thumbnail_id = get_post_thumbnail_id($post->ID);
+      $thumbnail_info = wp_get_attachment_image_src($thumbnail_id, 'full');
+      $thumbnail_w = $thumbnail_info[1];
+      $thumbnail_h = $thumbnail_info[2];
+      $rearrange['thumbnail_url'] = $thumbnail_info[0];
       $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
     ?>
     <figure class="article-eyecatch cl photo">
