@@ -1,0 +1,21 @@
+div#back-content
+  div.info
+    each post in target_post
+      div.info-box.info-category
+        a(href="#")
+          div.chart.large(style='--value:'+post.percent+'%')
+            if (post.percent >= 100)
+              p.achievement #{post.percent}%
+            else
+              p #{post.percent}%
+          div.chart-text #{post.name}: #{post.count}/#{post.target}
+
+    each info_cat in info_category
+      div.info-box.info-category
+        a(href="#")
+          div.chart(style='--value:'+info_cat.percent+'%')
+            if (info_cat.percent >= 100)
+              p.achievement #{info_cat.percent}%
+            else
+              p #{info_cat.percent}%
+          div.chart-text #{info_cat.name}: #{info_cat.count}/#{info_cat.target}

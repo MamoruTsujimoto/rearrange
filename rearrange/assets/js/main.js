@@ -1,9 +1,14 @@
 $(function() {
   console.log('Wellcome to Rearrange.');
+
+  const p = 19;
+  const t = 20;
+  console.log((p / t)*100);
 });
 
 window.onload = function() {
   const spinner = document.getElementById('loading');
+  spinner.classList.add('loaded');
 
   setTimeout(function(){
     spinner.classList.add('loaded');

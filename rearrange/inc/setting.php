@@ -337,21 +337,21 @@ EOF;
         /*---------------------------------------------------------------------------
          * セキュリティ
          *---------------------------------------------------------------------------*/
-        // register_setting( 'security', 'rearrange_security', [ $this, 'validation' ] );
+        register_setting( 'security', 'rearrange_security', [ $this, 'validation' ] );
 
-        // /* 非表示 */
-        // add_settings_section( 'security_hide', 'ユーザーID',
-        //     function() {
-        //         echo '';
-        //     }, 'rearrange_security' );
+        /* 非表示 */
+        add_settings_section( 'security_hide', 'ユーザーID',
+            function() {
+                echo '';
+            }, 'rearrange_security' );
 
-        // add_settings_field( 'hide_author_page', '作成者ページを非表示(404)にする',
-        // function() {
-        //     $checked = isset( $this->rearrange_settings['security']['hide_author_page'] ) ? 'checked' : '';
-        //     echo '
-        //     <input type="checkbox" id="remove-page" name="rearrange_security[security][hide_author_page]"'.$checked.' />
-        //     <input type="hidden" id="security-dummy" name="rearrange_security[security][dummy]" value="" />';
-        // }, 'rearrange_security', 'security_hide' );
+        add_settings_field( 'hide_author_page', '作成者ページを非表示(404)にする',
+        function() {
+            $checked = isset( $this->rearrange_settings['security']['hide_author_page'] ) ? 'checked' : '';
+            echo '
+            <input type="checkbox" id="remove-page" name="rearrange_security[security][hide_author_page]"'.$checked.' />
+            <input type="hidden" id="security-dummy" name="rearrange_security[security][dummy]" value="" />';
+        }, 'rearrange_security', 'security_hide' );
 
 
         /*---------------------------------------------------------------------------
@@ -431,6 +431,13 @@ EOF;
             echo '<input type="checkbox" id="blog-tool" name="rearrange_other[other][blog_tool]"' . $checked . ' />';
           }, 'rearrange_other', 'other_setting' );
 
+        // 目標投稿数
+        add_settings_field( 'target_posts', '目標の投稿数',
+          function() {
+            $target_count = isset( $this->rearrange_settings['other']['target_posts'] ) ? $this->rearrange_settings['other']['target_posts'] : 0;
+            echo '
+            <input type="number" id="target_posts" name="rearrange_other[other][target_posts]" value="' . $target_count . '" />';
+          }, 'rearrange_other', 'other_setting' );
       }
 
 
@@ -441,7 +448,7 @@ EOF;
       foreach( $input as $key => $value ) {
         set_theme_mod( $key, $value );
       }
-        // add_settings_error( 'dashboard', 'error', '保存できませんでした。設定内容をもう一度ご確認ください。', 'error' );
+      //add_settings_error( 'dashboard', 'error', '保存できませんでした。設定内容をもう一度ご確認ください。', 'error' );
       if ( ! $this->is_same_previous( $input ) ) {
         add_settings_error( key( $input ), 'success', '設定を保存しました。', 'updated' );
       }

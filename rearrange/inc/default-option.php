@@ -56,7 +56,8 @@ if ( ! function_exists( 'rearrange_setup_options' ) ) :
         // その他
         set_theme_mod( 'other', [
           'emoji'     => 'on',
-          'blog_tool' => 'on'
+          'blog_tool' => 'on',
+          'target_posts'=> '',
         ] );
 
 

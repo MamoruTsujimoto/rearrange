@@ -1,0 +1,73 @@
+:root {
+  --size: 100px;
+  --bord: 5px;
+  --bord-hover: 13px;
+  --bord-large: 8px;
+  --bord-large-hover: 16px;
+}
+
+.chart {
+  width: var(--size);
+  height: var(--size);
+  margin: 1em auto;
+  border-radius: 50%;
+  background-image: conic-gradient(#B19760 var(--value), #2E3336 var(--value));
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - var(--bord));
+    height: calc(100% - var(--bord));
+    background: #1A1F22;
+    border-radius: inherit;
+    transition: all 500ms 0s ease;
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+    font-size: 1em;
+    color: #747B7C;
+  }
+
+  .achievement {
+    color: #B19760;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  &.large {
+    width: 200px;
+    height: 200px;
+
+    &:after {
+      width: calc(100% - var(--bord-large));
+      height: calc(100% - var(--bord-large));
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .achievement {
+      font-size: 1.5em;
+    }
+  }
+
+
+
+  &-text {
+    text-align: center;
+    color: #747B7C;
+
+    @include font-size(12,24);
+    font-weight: bold;
+  }
+}

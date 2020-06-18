@@ -27,11 +27,6 @@ if ( $php_ver_compare || $wp_ver_compare ) {
   return;
 }
 
-/*---------------------------------------------------------------------------
- * グローバル変数
- *---------------------------------------------------------------------------*/
-$rearrange = get_option( 'theme_mods_' . THEME );
-
 
 /*---------------------------------------------------------------------------
  * オプション
@@ -115,6 +110,14 @@ require PARENT_INC . '/shortcodes.php';
  * クイックタグ
  *---------------------------------------------------------------------------*/
 require PARENT_INC . '/quicktags.php';
+
+
+/*---------------------------------------------------------------------------
+ * グローバル変数
+ *---------------------------------------------------------------------------*/
+$rearrange = get_option( 'theme_mods_' . THEME );
+$rearrange['base_url'] = get_bloginfo('url');
+$rearrange['categories'] = init_category();
 
 
 /*---------------------------------------------------------------------------
@@ -233,4 +236,41 @@ endif;
  *---------------------------------------------------------------------------*/
 if ( isset( $rearrange['entry']['remove_wpautop'] ) && true === $rearrange['entry']['remove_wpautop'] ) {
   remove_filter( 'the_content', 'wpautop' );
+}
+
+/*---------------------------------------------------------------------------
+ * カテゴリの整形
+ *---------------------------------------------------------------------------*/
+function init_category() {
+  $cat_args = array(
+    'orderby'      => 'name',
+    'show_count'   => 0,
+    'hierarchical' => 1,
+    'exclude' => 1,
+    'depth' => 0,
+  );
+
+  $cat_parents = get_categories($cat_args);
+  $category = array();
+
+  foreach($cat_parents as $cat_parent) {
+    if($cat_parent->parent == 0) {
+      array_push($category,$cat_parent);
+    }
+  }
+
+  return $category;
+}
+
+/*---------------------------------------------------------------------------
+ * 子カテゴリ判定
+ *---------------------------------------------------------------------------*/
+function in_child_category( $cat_data ) {
+	foreach($cat_data as $data) {
+		if($data->parent != 0) {
+			return true;
+		}
+	}
+
+	return false;
 }

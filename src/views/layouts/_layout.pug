@@ -13,13 +13,15 @@ doctype html
 html(lang="ja")
   head
     meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width')
+    meta(name='viewport' content='width=device-width,viewport-fit=cover')
     meta(name='robots' content='noindex, nofollow')
     link(rel="shortcut icon" href="/assets/img/favicon.ico")
     link(rel='apple-touch-icon' sizes='180x180' href='/assets/img/apple-touch-icon.png')
     link(rel='icon' type='image/png' sizes='32x32' href='/assets/img/favicon-32x32.png')
     link(rel='icon' type='image/png' sizes='16x16' href='/assets/img/favicon-16x16.png')
     meta(name='msapplication-TileColor' content='#da532c')
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black")
     meta(name='theme-color' content='#000000')
     block title
       title #{site_info.title} - #{site_info.subtitle}

@@ -1,0 +1,80 @@
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+
+  @media #{$small} {
+    display: block;
+  }
+
+  &-box {
+    position: relative;
+    width: calc(100% / 5);
+
+    @media #{$small} {
+      width: 100%;
+      border-right: 1px solid #2E3336;
+    }
+
+    &:nth-of-type(1) {
+      width: 100%;
+      counter-reset: section;
+      border: 1px solid #2E3336;
+    }
+
+    &:nth-of-type(6n) {
+      border-right: 1px solid #2E3336;
+    }
+
+    &:not(:nth-of-type(1)) {
+      border-left: 1px solid #2E3336;
+      border-bottom: 1px solid #2E3336;
+      counter-increment: section;
+    }
+
+    &:last-of-type {
+      border-right: 1px solid #2E3336;
+    }
+
+    &:before {
+      content: "0" counter(section);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 8px 7px;
+      letter-spacing: 0;
+      background-color: #2E3336;
+      color: #91989F;
+      font-size: 11px;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    a {
+      display: block;
+      padding: 40px 20px;
+      transition: all 500ms 0s ease;
+
+      &:hover {
+        background-color: #1A1F22;
+
+        .chart {
+          &:after {
+            width: calc(100% - var(--bord-hover));
+            height: calc(100% - var(--bord-hover));
+          }
+        }
+
+        .chart.large {
+          &:after {
+            width: calc(100% - var(--bord-large-hover));
+            height: calc(100% - var(--bord-large-hover));
+          }
+        }
+      }
+    }
+
+  }
+}

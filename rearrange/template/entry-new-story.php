@@ -40,10 +40,10 @@ $custom_post = new WP_Query($args);
         if ( has_post_thumbnail() ) {
           $id = get_the_ID();
           $thumbnail = get_the_post_thumbnail_url($id);
-          $outline = get_field('post_eyecatch_outline') == 'true' ? ' class="outline"' : '';
-          echo '<div id="new-story-image"'.$outline.' style="background-image: url('.$thumbnail.')"></div>'."\n";
+          $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
+          echo '<div id="new-story-image" class="lazyload'.$outline.'" style="background-image: url('.$thumbnail.')" data-bg="'.$thumbnail.'"></div>'."\n";
         } else {
-          echo '<div id="new-story-image" class="no-image"></div>'."\n";
+          echo '<div id="new-story-image" class="no-image lazyload"></div>'."\n";
         }
       ?>
 

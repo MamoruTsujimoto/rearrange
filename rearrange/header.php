@@ -32,12 +32,6 @@ $rearrange['home_url'] = esc_url( get_home_url( null, '/' ) );
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head<?php echo $facebook_ogp_prefix; ?>>
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-16x16.png">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#000000">
 <?php get_template_part( 'analytics' ); ?>
 <?php wp_head(); ?>
 <?php get_template_part( 'add', 'header' ); ?>

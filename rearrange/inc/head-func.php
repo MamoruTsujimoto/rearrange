@@ -223,10 +223,18 @@ add_action( 'wp_head', function() {
     global $rearrange;
 
     echo '<meta charset="UTF-8">';
-    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui" />';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui,viewport-fit=cover" />';
     echo '<meta name="mobile-web-app-capable" content="yes" />';
     echo '<meta name="apple-mobile-web-app-capable" content="yes" />';
     echo '<meta name="apple-mobile-web-app-status-bar-style" content="default" />';
+    echo '<meta name="msapplication-TileColor" content="#da532c">';
+    echo '<meta name="apple-mobile-web-app-capable" content="yes">';
+    echo '<meta name="apple-mobile-web-app-status-bar-style" content="black">';
+    echo '<meta name="theme-color" content="#000000">';
+    echo '<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">';
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png">';
+    echo '<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-32x32.png">';
+    echo '<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-16x16.png">';
 
     // Description
     rearrange_the_description_tag();

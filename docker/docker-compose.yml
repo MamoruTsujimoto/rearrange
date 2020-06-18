@@ -3,7 +3,7 @@ services:
   web:
     build: ./web
     ports:
-      - "3000:3000"
+      - "3003:3003"
       - "443:443"
     depends_on:
       - app
@@ -22,12 +22,13 @@ services:
       - ./app/wordpress/wp-config.php:/var/www/html/wp-config.php
       - ./app/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ../${THEME_NAME}:/var/www/html/wp-content/themes/${THEME_NAME}
+      - ./app/wordpress:/var/www/html
 
   db:
     image: mysql:5.7.19
     env_file: .env
     ports:
-      - "3306:3306"
+      - "3307:3307"
     restart: always
     volumes:
       - db-data:/var/lib/mysql

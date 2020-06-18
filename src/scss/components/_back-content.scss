@@ -1,38 +1,8 @@
 #back-content {
   margin-top: 80px;
+  padding: 60px 50px;
 
-  ul {
-    padding: 0 50px;
-    color: #BBBBBB;
-
-    li {
-      margin: 0 0 20px;
-      text-transform: uppercase;
-      counter-increment: section;
-
-      &:before {
-        content: "0" counter(section);
-        margin-right: 6px;
-        vertical-align: 14px;
-        letter-spacing: 0;
-        color: #91989F;
-
-        @include font-size(11,11);
-      }
-
-      a {
-        color: #BBBBBB;
-      }
-
-      span {
-        @include font-size(16,16);
-        letter-spacing: .5em;
-
-        &:after {
-          content: ':';
-          margin-right: 5px;
-        }
-      }
-    }
+  @media #{$small} {
+    padding: 30px 20px;
   }
 }

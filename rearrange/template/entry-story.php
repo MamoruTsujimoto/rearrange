@@ -19,9 +19,9 @@ $custom_post = new WP_Query($args);
           if ( has_post_thumbnail() ) {
             $id = get_the_ID();
             $thumbnail = get_the_post_thumbnail_url($id);
-            echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+            echo '<div class="story-figure figure lazyload" style="background-image: url('.$thumbnail.')" data-bg="'.$thumbnail.'"></div>'."\n";
           } else {
-            echo '<div class="story-figure figure no-image"></div>'."\n";
+            echo '<div class="story-figure figure lazyload no-image"></div>'."\n";
           }
         ?>
         <div class="story-entrance">
