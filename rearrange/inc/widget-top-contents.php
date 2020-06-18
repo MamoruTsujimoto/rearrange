@@ -51,7 +51,7 @@ class Widget_Top_Contents extends WP_Widget {
             <?php $url = get_permalink(); ?>
             <a href="<?php echo $url; ?>">
               <?php
-                if ( $use_category_figure ) {
+                if ( $use_category_figure !== 'false' ) {
                   $thumbnail = get_field('category_figure', 'term_'.$term_id);
                   echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
                 } else {
