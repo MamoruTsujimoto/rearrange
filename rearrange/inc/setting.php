@@ -436,7 +436,7 @@ EOF;
           function() {
             $target_count = isset( $this->rearrange_settings['other']['target_posts'] ) ? $this->rearrange_settings['other']['target_posts'] : 0;
             echo '
-            <input type="number" id="target_posts" name="rearrange_other[other][target_posts]" value="' . $target_count . '" />';
+            <input type="number" id="target-posts" name="rearrange_other[other][target_posts]" value="' . $target_count . '" />';
           }, 'rearrange_other', 'other_setting' );
       }
 

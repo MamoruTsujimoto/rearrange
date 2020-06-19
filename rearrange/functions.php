@@ -10,6 +10,13 @@ define( 'PARENT_JS',  PARENT . '/assets/js' );
 define( 'PARENT_INC',  get_parent_theme_file_path() . '/inc' );
 define( 'PLACEHOLDER_IMAGE',  'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' );
 
+/*---------------------------------------------------------------------------
+ * グローバル変数
+ *---------------------------------------------------------------------------*/
+$rearrange = get_option( 'theme_mods_' . THEME );
+$rearrange['base_url'] = get_bloginfo('url');
+$rearrange['categories'] = init_category();
+
 
 /*---------------------------------------------------------------------------
  * バージョンチェック
@@ -110,14 +117,6 @@ require PARENT_INC . '/shortcodes.php';
  * クイックタグ
  *---------------------------------------------------------------------------*/
 require PARENT_INC . '/quicktags.php';
-
-
-/*---------------------------------------------------------------------------
- * グローバル変数
- *---------------------------------------------------------------------------*/
-$rearrange = get_option( 'theme_mods_' . THEME );
-$rearrange['base_url'] = get_bloginfo('url');
-$rearrange['categories'] = init_category();
 
 
 /*---------------------------------------------------------------------------
