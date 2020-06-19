@@ -11,7 +11,9 @@ $cat = get_the_category($post->ID)[0];
 <?php while ( have_posts() ) : the_post(); ?>
   <header>
     <h1>
-      <?php the_title(); ?>
+      <?php
+      echo $title = str_replace('非公開: ', '', get_the_title());
+      ?>
     </h1>
 
     <div class="article-info">

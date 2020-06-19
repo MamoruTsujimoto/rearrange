@@ -137,6 +137,7 @@
       @media #{$small} {
         order: 1;
         height: 100vh;
+        filter: none;
       }
 
       &.no-image {

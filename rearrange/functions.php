@@ -135,39 +135,39 @@ add_action( 'after_setup_theme', function() {
 
   /* アイキャッチ */
   add_theme_support( 'post-thumbnails' );
-    add_image_size( 'square-small',     160, 160, true ); // 一覧SP
-    add_image_size( 'square-large',     320, 320, true ); // 関連記事 正方形 SP
-    add_image_size( 'rectangle-small',  184, 117, true ); // 個別記事アイキャッチ SP
-    add_image_size( 'rectangle-medium', 368, 234, true ); // 個別記事アイキャッチ PC、関連記事 長方形PC、
-    add_image_size( 'rectangle-large',  600, 358, true ); // 関連記事 長方形SP
+  add_image_size( 'square-small',     160, 160, true ); // 一覧SP
+  add_image_size( 'square-large',     320, 320, true ); // 関連記事 正方形 SP
+  add_image_size( 'rectangle-small',  184, 117, true ); // 個別記事アイキャッチ SP
+  add_image_size( 'rectangle-medium', 368, 234, true ); // 個別記事アイキャッチ PC、関連記事 長方形PC、
+  add_image_size( 'rectangle-large',  600, 358, true ); // 関連記事 長方形SP
 
-    /* headerでの投稿とコメントのRSSフィードのリンクを有効にします */
-    add_theme_support( 'automatic-feed-links' );
+  /* headerでの投稿とコメントのRSSフィードのリンクを有効にします */
+  add_theme_support( 'automatic-feed-links' );
 
-    /* テキストドメインの警告回避 */
-    __( 'rearrange', 'rearrange' );
+  /* テキストドメインの警告回避 */
+  __( 'rearrange', 'rearrange' );
 
-    /* ヘッダー画像 */
-    $ch_param = [
-      'width'       => 750,
-      'height'      => 200,
-      'header-text' => false
-    ];
-    add_theme_support( 'custom-header', $ch_param );
+  /* ヘッダー画像 */
+  $ch_param = [
+    'width'       => 750,
+    'height'      => 200,
+    'header-text' => false
+  ];
+  add_theme_support( 'custom-header', $ch_param );
 
-    /* 背景色・背景画像 */
-    $cb_param = [
-    	'default-color' => 'F2F1F3',
-    ];
-    add_theme_support( 'custom-background', $cb_param );
+  /* 背景色・背景画像 */
+  $cb_param = [
+    'default-color' => 'F2F1F3',
+  ];
+  add_theme_support( 'custom-background', $cb_param );
 
-    /* 固定ページで抜粋を有効化 */
-    add_post_type_support( 'page', 'excerpt' );
+  /* 固定ページで抜粋を有効化 */
+  add_post_type_support( 'page', 'excerpt' );
 
-    /* ウィジェットでショートコードを有効化 */
-    add_filter( 'widget_text', 'do_shortcode' );
+  /* ウィジェットでショートコードを有効化 */
+  add_filter( 'widget_text', 'do_shortcode' );
 
-  } );
+} );
 
 
 /*---------------------------------------------------------------------------
@@ -273,3 +273,42 @@ function in_child_category( $cat_data ) {
 
 	return false;
 }
+
+/*---------------------------------------------------------------------------
+ * 特定カテゴリの検索エンジンブロック
+ *---------------------------------------------------------------------------*/
+add_action( 'wp_head', 'noindex_for_category' );
+function noindex_for_category() {
+  $cat_id = get_category_by_slug("secret");
+  $cat_id = $cat_id->cat_ID;
+  if( is_category($cat_id) ) {
+    echo '<meta name="robots" content="noindex,follow" />'."\n";
+  }else if( is_singular() ) {
+    $cat = get_the_category();
+    foreach($cat as $val) {
+      if($cat_id === $val->term_id) {
+        echo '<meta name="robots" content="noindex,follow" />'."\n";
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------
+ * URL category の削除
+ *---------------------------------------------------------------------------*/
+// function remove_category_function($link) {
+//   return str_replace("/category/", "/", $link);
+// }
+// add_filter('user_trailingslashit', 'remove_category_function');
+
+// function remove_category_flush_rules() {
+//   global $wp_rewrite;
+//   $wp_rewrite->flush_rules();
+// }
+// add_action('init', 'remove_category_flush_rules');
+
+// function remove_category_rewrite($wp_rewrite) {
+//   $new_rules = array('(.+)/page/(.+)/?' => 'index.php?category_name='.$wp_rewrite->preg_index(1).'&paged='.$wp_rewrite->preg_index(2));
+//   $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+// }
+// add_filter('generate_rewrite_rules', 'remove_category_rewrite');

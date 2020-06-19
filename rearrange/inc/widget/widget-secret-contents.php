@@ -3,17 +3,17 @@
 /*---------------------------------------------------------------------------
  * トップコンテンツ ウィジェット
  *---------------------------------------------------------------------------*/
-class Widget_Top_Contents extends WP_Widget {
+class Widget_Secret_Contents extends WP_Widget {
 
-	/* Widget_Top_Contents コンストラクタ */
+	/* Widget_Secret_Contents コンストラクタ */
 	public function __construct() {
 		$widget_options = [
-			'classname'                     => 'rearrange-top-contents',
-			'description'                   => 'トップコンテンツを配置します',
+			'classname'                     => 'rearrange-secret-contents',
+			'description'                   => 'シークレットコンテンツを配置します',
 			'customize_selective_refresh'   => true,
 		];
 		$control_options = [ 'width' => 400, 'height' => 350 ];
-		parent::__construct( 'rearrange-top-contents', 'Rearrange - コンテンツ', $widget_options, $control_options );
+		parent::__construct( 'rearrange-secret-contents', 'シークレットコンテンツ', $widget_options, $control_options );
 	}
 
 	/**
@@ -25,16 +25,18 @@ class Widget_Top_Contents extends WP_Widget {
 	public function widget( $args, $instance ) {
     global $rearrange;
 
-		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-    $cat_id = apply_filters( 'widget_category', empty( $instance['category'] ) ? '' : $instance['category'], $instance, $this->id_base );
-    $view_count = empty( $instance['category'] ) ? 3 : $instance['count'];
-    $classname = empty( $instance['classname'] ) ? '' : $instance['classname'];
+    if(is_user_logged_in()) {
 
-    $cat_diary = get_category($cat_id);
-    $cat_diary_name = $cat_diary->name;
-    $cat_diary_id = $cat_diary->term_id;
-    $args = array( 'cat'=> $cat_id, 'posts_per_page' => 3, 'post__not_in' => get_option('sticky_posts'), 'order'=> 'DESC' );
-    $custom_post = new WP_Query($args);
+      /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
+      $cat_id = apply_filters( 'widget_category', empty( $instance['category'] ) ? '' : $instance['category'], $instance, $this->id_base );
+      $view_count = empty( $instance['category'] ) ? 3 : $instance['count'];
+      $classname = empty( $instance['classname'] ) ? '' : $instance['classname'];
+
+      $cat_diary = get_category($cat_id);
+      $cat_diary_name = $cat_diary->name;
+      $cat_diary_id = $cat_diary->term_id;
+      $args = array( 'cat'=> $cat_id, 'posts_per_page' => 3, 'post__not_in' => get_option('sticky_posts'), 'order'=> 'DESC' );
+      $custom_post = new WP_Query($args);
     ?>
       <?php if ( $custom_post->have_posts() ) : ?>
       <section class="story-past">
@@ -58,7 +60,8 @@ class Widget_Top_Contents extends WP_Widget {
                   if ( has_post_thumbnail() ) {
                     $id = get_the_ID();
                     $thumbnail = get_the_post_thumbnail_url($id);
-                    echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                    $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
+                    echo '<div class="story-figure figure'.$outline.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
                   } else {
                     if ($classname !== 'wordpress') {
                       echo '<div class="story-figure figure no-image"></div>'."\n";
@@ -72,7 +75,7 @@ class Widget_Top_Contents extends WP_Widget {
               ?>
               <div class="story-entrance">
                 <?php
-                $title = get_the_title();
+                $title = str_replace('非公開: ', 'SECRET: ', get_the_title());
                 echo '<h1>'.$title.'</h1>';
                 ?>
                 <div class="story-information">
@@ -99,8 +102,8 @@ class Widget_Top_Contents extends WP_Widget {
         <div class="btn btn-viewall"><a href="<?php echo get_category_link($cat_diary_id); ?>">view all</a></div>
       </section>
       <?php endif; ?>
-
     <?php
+    }
 	}
 
 	/**
@@ -170,5 +173,5 @@ class Widget_Top_Contents extends WP_Widget {
  * ウィジェットテンプレートの登録
  *---------------------------------------------------------------------------*/
 add_action( 'widgets_init', function() {
-	register_widget( 'Widget_Top_Contents' );
+	register_widget( 'Widget_Secret_Contents' );
 }, 1 );

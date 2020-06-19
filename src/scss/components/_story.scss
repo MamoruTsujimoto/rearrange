@@ -141,6 +141,16 @@
     @media #{$middle} {
       padding-top: 0;
       height: 100vh;
+      filter: none;
+    }
+
+    &.outline {
+      border: 1px solid #DDDDDD;
+
+      @media #{$small} {
+        border: none;
+        border-top: 1px solid #D0D0D4;
+      }
     }
   }
 }
