@@ -1,18 +1,10 @@
 $(function() {
   console.log('Wellcome to Rearrange.');
-
-  const p = 19;
-  const t = 20;
-  console.log((p / t)*100);
 });
 
 window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
-
-  setTimeout(function(){
-    spinner.classList.add('loaded');
-  },1000);
 }
 
 // MENU
@@ -23,12 +15,6 @@ if(menu !== null) {
     const menu = this.children[0];
     document.body.classList.add('is-open');
     overlay.classList.add('is-open');
-
-    // overlay.addEventListener('click',function() {
-    //   this.classList.remove('is-open');
-    //   menu.classList.remove('active');
-    //   document.body.classList.remove('is-open');
-    // });
   });
 }
 
@@ -44,8 +30,8 @@ if(close !== null) {
 
 
 const imgLoad = imagesLoaded( document.querySelector('main') );
-imgLoad.on( 'always', function( instance) {
-  console.log('Loaded');
+imgLoad.on( 'always', function(instance) {
+  //console.log('Loaded');
 });
 
 // Up To Top
@@ -72,6 +58,3 @@ if(up !== null) {
     scrollToTop();
   };;
 }
-// imagesLoaded( document.querySelector('main'), function( instance ) {
-//   console.log('all images are loaded');
-// });
