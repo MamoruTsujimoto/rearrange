@@ -10,6 +10,14 @@
           background-position: center center;
           background-size: 100px auto;
           background-color: #f9f9f9;
+
+          &.right {
+            background-position: center right;
+          }
+
+          &.left {
+            background-position: center left;
+          }
         }
       }
     }

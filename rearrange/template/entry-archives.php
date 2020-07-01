@@ -19,7 +19,8 @@ $custom_post = new WP_Query($args);
           if ( has_post_thumbnail() ) {
             $id = get_the_ID();
             $thumbnail = get_the_post_thumbnail_url($id);
-            echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+            $position = !empty(get_field('post_eyecatch_position')) ? ' '.get_field('post_eyecatch_position') : '';
+            echo '<div class="story-figure figure'.$position.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
           } else {
             echo '<div class="story-figure figure no-image"></div>'."\n";
           }

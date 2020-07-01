@@ -152,6 +152,14 @@
         border-top: 1px solid #D0D0D4;
       }
     }
+
+    &.right {
+      background-position: center right;
+    }
+
+    &.left {
+      background-position: center left;
+    }
   }
 }
 

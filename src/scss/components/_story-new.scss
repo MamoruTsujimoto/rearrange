@@ -154,6 +154,18 @@
           border-top: 1px solid #D0D0D4;
         }
       }
+
+      &.right {
+        @media #{$small} {
+          background-position: center right;
+        }
+      }
+
+      &.left {
+        @media #{$small} {
+          background-position: center left;
+        }
+      }
     }
 
     .btn-readmore {
