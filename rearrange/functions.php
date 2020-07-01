@@ -294,21 +294,10 @@ function noindex_for_category() {
 }
 
 /*---------------------------------------------------------------------------
- * URL category の削除
+ * 更新日英語表記
  *---------------------------------------------------------------------------*/
-// function remove_category_function($link) {
-//   return str_replace("/category/", "/", $link);
-// }
-// add_filter('user_trailingslashit', 'remove_category_function');
-
-// function remove_category_flush_rules() {
-//   global $wp_rewrite;
-//   $wp_rewrite->flush_rules();
-// }
-// add_action('init', 'remove_category_flush_rules');
-
-// function remove_category_rewrite($wp_rewrite) {
-//   $new_rules = array('(.+)/page/(.+)/?' => 'index.php?category_name='.$wp_rewrite->preg_index(1).'&paged='.$wp_rewrite->preg_index(2));
-//   $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-// }
-// add_filter('generate_rewrite_rules', 'remove_category_rewrite');
+add_filter('get_the_modified_time','modified_date_format');
+function modified_date_format(){
+  $modified_date_format = get_post_modified_time(get_option( 'date_format' ));
+  return $modified_date_format;
+}

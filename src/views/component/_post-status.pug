@@ -1,21 +1,48 @@
 div#back-content
-  div.info
-    each post in target_post
-      div.info-box.info-category
-        a(href="#")
-          div.chart.large(style='--value:'+post.percent+'%')
-            if (post.percent >= 100)
-              p.achievement #{post.percent}%
-            else
-              p #{post.percent}%
-          div.chart-text #{post.name}: #{post.count}/#{post.target}
+  div#tab
+    div.tab.is-select status
+    div.tab calendar
+  div#tab-contents
+    div.tab-content.calendar
+      div.month-name July
+        span 2020
 
-    each info_cat in info_category
-      div.info-box.info-category
-        a(href="#")
-          div.chart(style='--value:'+info_cat.percent+'%')
-            if (info_cat.percent >= 100)
-              p.achievement #{info_cat.percent}%
-            else
-              p #{info_cat.percent}%
-          div.chart-text #{info_cat.name}: #{info_cat.count}/#{info_cat.target}
+      - var day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      - var days = [30, 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 1, 2];
+
+      - for(i=0;i<7;i++)
+          div.day.day-name=day_names[i]
+      - for(j=0;j<35;j++)
+        - if(j == 0 || j == 1 || j == 33 || j == 34)
+            div.day.day-disabled
+              span= days[j]
+        - else if(j == 10)
+          div.day.day-now
+            span= days[j]
+        - else if(j == 7 || j == 5 || j == 20)
+          div.day.day-now
+            span= days[j]
+        - else
+            div.day
+              span= days[j]
+
+    div.tab-content.info
+      each post in target_post
+        div.info-box.info-category
+          a(href="#")
+            div.chart.large(style='--value:'+post.percent+'%')
+              if (post.percent >= 100)
+                p.achievement #{post.percent}%
+              else
+                p #{post.percent}%
+            div.chart-text #{post.name}: #{post.count}/#{post.target}
+
+      each info_cat in info_category
+        div.info-box.info-category
+          a(href="#")
+            div.chart(style='--value:'+info_cat.percent+'%')
+              if (info_cat.percent >= 100)
+                p.achievement #{info_cat.percent}%
+              else
+                p #{info_cat.percent}%
+            div.chart-text #{info_cat.name}: #{info_cat.count}/#{info_cat.target}

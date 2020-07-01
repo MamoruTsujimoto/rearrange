@@ -10,16 +10,15 @@
 
   #wellcome-to {
     padding: 22px 20px 20px;
-    text-align: center;
 
     h1 {
       position: relative;
       display: inline-block;
       font-family: 'Metrophobic', serif;
 
-      @include font-size(21,21);
+      @include font-size(12,12);
 
-      letter-spacing: .15em;
+      letter-spacing: .3em;
 			text-transform: uppercase;
     }
   }

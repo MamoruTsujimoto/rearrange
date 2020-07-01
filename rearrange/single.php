@@ -4,6 +4,11 @@ global $rearrange, $post;
 get_header();
 
 $cat = get_the_category($post->ID)[0];
+$cat_link = get_category_link($cat->term_id);
+$get_the_time = get_the_time();
+$get_the_modified_date = get_the_modified_date();
+$posted = 'Posted on '.get_post_time('F d, Y');
+$updated = 'Updated on '.get_the_modified_time('F d, Y');
 ?>
 
 <article id="story-<?php echo $post->ID; ?>" class="article">
@@ -16,12 +21,16 @@ $cat = get_the_category($post->ID)[0];
       ?>
     </h1>
 
-    <div class="article-info">
+    <div class="article-meta">
       <ul>
-        <li><strong class="date"><?php echo get_post_time('F d, Y'); ?></strong></li>
-        <li><?php echo $cat->name; ?></li>
+        <?php if($get_the_time != $get_the_modified_date):?>
+        <li><?php echo $updated; ?></li>
+        <?php endif; ?>
+        <li><?php echo $posted; ?></li>
+        <li><a href="<?php echo $cat_link; ?>"><?php echo $cat->name; ?></a></li>
       </ul>
     </div>
+
     <?php
     if ( $rearrange['has_post_thumbnail'] ) :
       $thumbnail_id = get_post_thumbnail_id($post->ID);
@@ -43,6 +52,33 @@ $cat = get_the_category($post->ID)[0];
   <div class="article-body">
     <?php the_content(); ?>
   </div>
+
+  <footer>
+    <div class="article-meta">
+      <ul>
+        <?php if($get_the_time != $get_the_modified_date):?>
+        <li><?php echo $updated; ?></li>
+        <?php endif; ?>
+        <li><?php echo $posted; ?></li>
+        <li><a href="<?php echo $cat_link; ?>"><?php echo $cat->name; ?></a></li>
+      </ul>
+      <?php
+        $tags = get_the_tags();
+        if($tags):
+      ?>
+      <div class="article-meta-tag">
+        <div class="article-meta-tag-heading">tags:</div>
+        <div class="article-meta-tag-wrapper">
+          <?php foreach($tags as $tag): ?>
+          <div class="tag"><?php echo $tag->name; ?></div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+      <?php
+        endif;
+      ?>
+    </div>
+  </footer>
 <?php endwhile; ?>
 <?php endif; ?>
 </article>

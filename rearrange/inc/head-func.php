@@ -231,10 +231,10 @@ add_action( 'wp_head', function() {
     echo '<meta name="apple-mobile-web-app-capable" content="yes">';
     echo '<meta name="apple-mobile-web-app-status-bar-style" content="black">';
     echo '<meta name="theme-color" content="#000000">';
-    echo '<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">';
-    echo '<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png">';
-    echo '<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-32x32.png">';
-    echo '<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-16x16.png">';
+    echo '<link rel="shortcut icon" href="'.get_template_directory_uri().'/assets/img/favicon.ico">';
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="'.get_template_directory_uri().'/assets/img/apple-touch-icon.png">';
+    echo '<link rel="icon" type="image/png" sizes="32x32" href="'.get_template_directory_uri().'/assets/img/favicon-32x32.png">';
+    echo '<link rel="icon" type="image/png" sizes="16x16" href="'.get_template_directory_uri().'/assets/img/favicon-16x16.png">';
 
     // Description
     rearrange_the_description_tag();
@@ -290,8 +290,6 @@ add_action( 'wp_enqueue_scripts', function() {
     $theme = wp_get_theme();
 
     if ( isset( $rearrange['css']['load_parent_style'] ) ) {
-        wp_register_style( 'Raleway', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&amp;family=Metrophobic&amp;family=Neuton:wght@300&amp;display=swap', [], $theme->Version );
-        wp_enqueue_style( 'Raleway' );
         wp_register_style( 'rearrange', PARENT_CSS . '/style.css', [], $theme->Version );
         wp_enqueue_style( 'rearrange' );
     }

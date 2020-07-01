@@ -5,7 +5,7 @@
 // Font Noto Sans
 @import '//fonts.googleapis.com/earlyaccess/notosansjp.css';
 
-@import '//fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Raleway:wght@300;700&display=swap');
 
 // Common
 @import './common/valiables';
@@ -22,6 +22,7 @@
 @import './components/block';
 @import './components/button';
 @import './components/back-content';
+@import './components/calendar';
 @import './components/chart';
 @import './components/figure';
 @import './components/icon';
@@ -36,6 +37,7 @@
 @import './components/story-new';
 @import './components/story-other';
 @import './components/story-single';
+@import './components/tabs';
 @import './components/wordpress';
 
 // Layouts

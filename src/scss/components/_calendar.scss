@@ -1,0 +1,68 @@
+.calendar {
+  display: grid;
+  margin: 0 0 50px;
+  height: 500px;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  grid-template-rows: 50px 50px;
+  border-top: 1px solid #2E3336;
+
+  .month {
+    &-name {
+      grid-row: 1;
+      grid-column: 1 / span 7;
+      padding: 0 15px;
+      border-left: 1px solid #2E3336;
+      border-right: 1px solid #2E3336;
+      border-bottom: 1px solid #2E3336;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      font-weight: bold;
+
+      @include font-size(25,50);
+
+      span {
+        @include font-size(15,15);
+        font-weight: normal;
+      }
+    }
+  }
+
+  .day {
+    position: relative;
+    padding: 0 20px;
+    text-align: right;
+    border-right: 1px solid #2E3336;
+    border-bottom: 1px solid #2E3336;
+    transition: all 500ms 0s ease;
+
+    &:nth-of-type(7n+2) {
+      border-left: 1px solid #2E3336;
+    }
+
+    &:hover:not(.day-name):not(.day-now) {
+      color: #747B7C;
+      background-color: #1A1F22;
+    }
+
+    &-name {
+      text-align: center;
+
+      @include font-size(14,50);
+    }
+
+    &-disabled {
+      background-image: repeating-linear-gradient(-45deg,rgba(46,51,54,0.2), rgba(46,51,54,0.2) 7.5px,transparent 0, transparent 15px);
+    }
+
+    &-now {
+      color: #B19764;
+      background-color: #2E3336;
+    }
+
+    span {
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+    }
+  }
+}
