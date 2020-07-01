@@ -38,10 +38,11 @@ $updated = 'Updated on '.get_the_modified_time('F d, Y');
       $thumbnail_w = $thumbnail_info[1];
       $thumbnail_h = $thumbnail_info[2];
       $rearrange['thumbnail_url'] = $thumbnail_info[0];
+      $position = !empty(get_field('post_eyecatch_position')) ? ' '.get_field('post_eyecatch_position') : '';
       $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
     ?>
     <figure class="article-eyecatch cl photo">
-      <div class="article-eyecatch-image<?php echo $outline; ?>" style="background-image: url(<?php echo $rearrange['thumbnail_url']; ?>);"></div>
+      <div class="article-eyecatch-image<?php echo $outline; ?><?php echo $position; ?>" style="background-image: url(<?php echo $rearrange['thumbnail_url']; ?>);"></div>
       <?php if($caption = get_post(get_post_thumbnail_id())->post_excerpt): ?>
       <figcaption><?php echo $caption; ?></figcaption>
       <?php endif; ?>

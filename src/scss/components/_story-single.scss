@@ -61,6 +61,18 @@
             border-top: 1px solid #E9E9EB;
           }
         }
+
+        &.right {
+          @media #{$small} {
+            background-position: center right;
+          }
+        }
+
+        &.left {
+          @media #{$small} {
+            background-position: center left;
+          }
+        }
       }
 
       figcaption {
@@ -254,7 +266,6 @@
       }
 
       ul {
-        margin-right: 10px;
         text-align: center;
 
         @media #{$small} {
@@ -268,9 +279,19 @@
 
           vertical-align: top;
 
+          @media #{$small} {
+            display: block;
+            margin: 0 0 10px;
+          }
+
           &:after {
             content: '/';
             margin: 0 10px;
+
+            @media #{$small} {
+              content: '';
+              margin: 0;
+            }
           }
 
           &:last-child {
@@ -295,6 +316,10 @@
         &-wrapper {
           display: flex;
           justify-content: center;
+
+          @media #{$small} {
+            flex-wrap: wrap;
+          }
 
           .tag {
             margin: 0 10px;
