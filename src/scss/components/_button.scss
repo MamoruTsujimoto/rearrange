@@ -59,11 +59,22 @@
   bottom: 44px;
   width: 50px;
   height: 50px;
-  background: #000 url(#{$IMG_PATH}/icon/icon-arrow-top.svg) center center no-repeat;
-  background-size: 15px auto;
+  background-color: #000;
   cursor: n-resize;
   opacity: 0;
   transition: all 500ms 0s ease;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
 
   &.is-active {
     opacity: 1;

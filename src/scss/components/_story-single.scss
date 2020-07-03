@@ -39,9 +39,12 @@
       margin: 40px 0 35px;
       color: #404040;
       text-align: center;
+      font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+      letter-spacing: .1em;
     }
 
     &-eyecatch {
+      margin-top: 10px;
       transition: 0.5s;
 
       &-image {

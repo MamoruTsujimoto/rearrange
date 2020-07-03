@@ -41,9 +41,11 @@
 
     h1 {
       position: relative;
+      font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
 
       @include font-size(24,40);
 
+      letter-spacing: .15em;
       color: #fff;
 
       @media #{$small} {
