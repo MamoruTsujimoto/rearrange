@@ -109,6 +109,12 @@ img {
   }
 }
 
+.thumb {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 // Margin
 $margin-min: 1;
 $margin-max: 100;

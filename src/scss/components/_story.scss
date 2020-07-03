@@ -149,7 +149,7 @@
 
       @media #{$small} {
         border: none;
-        border-top: 1px solid #D0D0D4;
+        border-top: 1px solid $color-border;
       }
     }
 

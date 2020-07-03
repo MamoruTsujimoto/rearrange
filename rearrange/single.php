@@ -79,6 +79,11 @@ $updated = 'Updated on '.get_the_modified_time('F d, Y');
         endif;
       ?>
     </div>
+
+    <div class="article-single-navigation">
+      <div class="article-single-prev navi"><?php previous_post_link('%link', 'Previous post'); ?></div>
+      <div class="article-single-next navi"><?php next_post_link('%link', 'Next post'); ?></div>
+    </div>
   </footer>
 <?php endwhile; ?>
 <?php endif; ?>

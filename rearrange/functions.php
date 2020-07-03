@@ -301,3 +301,8 @@ function modified_date_format(){
   $modified_date_format = get_post_modified_time(get_option( 'date_format' ));
   return $modified_date_format;
 }
+
+//add_filter('term_link', 'my_custom_post_type_permalinks_set', 10, 3);
+function my_custom_post_type_permalinks_set($termlink, $term, $taxonomy){
+  return str_replace('/'.$taxonomy.'/', '/', $termlink);
+}
