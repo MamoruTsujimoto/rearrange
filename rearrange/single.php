@@ -64,19 +64,22 @@ $updated = 'Updated on '.get_the_modified_time('F d, Y');
         <li><a href="<?php echo $cat_link; ?>"><?php echo $cat->name; ?></a></li>
       </ul>
       <?php
-        $tags = get_the_tags();
-        if($tags):
+      $tags = get_the_tags();
+      if($tags):
       ?>
       <div class="article-meta-tag">
         <div class="article-meta-tag-heading">tags:</div>
         <div class="article-meta-tag-wrapper">
-          <?php foreach($tags as $tag): ?>
-          <div class="tag"><?php echo $tag->name; ?></div>
+          <?php
+          foreach($tags as $tag):
+            $tag_link = get_tag_link($tag->term_id);
+          ?>
+          <div class="tag"><a href="<?php echo $tag_link; ?>"><?php echo $tag->name; ?></a></div>
           <?php endforeach; ?>
         </div>
       </div>
       <?php
-        endif;
+      endif;
       ?>
     </div>
 

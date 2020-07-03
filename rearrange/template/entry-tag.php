@@ -1,15 +1,15 @@
 <?php
 global $rearrange;
-$cat = get_category($cat);
-$cat_name = $cat->name;
-$cat_id = $cat->term_id;
-$args = array( 'cat'=> $cat_id, 'posts_per_page' => 20, 'order'=> 'DESC' );
+$tag = get_the_tags()[0];
+$tag_name = $tag->name;
+$tag_id = $tag->term_id;
+$args = array( 'tag_id'=> $tag_id, 'posts_per_page' => 20, 'order'=> 'DESC' );
 $custom_post = new WP_Query($args);
 ?>
 
 <?php if ( $custom_post->have_posts() ) : ?>
 <section class="story-past">
-  <h1 class="section-title" id="diary"><?php echo $cat_name; ?></h1>
+  <h1 class="section-title" id="diary"><?php echo $tag_name; ?></h1>
   <div class="article-wrapper">
     <?php while ( $custom_post->have_posts() ) : $custom_post->the_post(); ?>
     <article id="story02">
