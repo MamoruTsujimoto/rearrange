@@ -72,7 +72,7 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
             }
             $rearrange['has_post_thumbnail'] = has_post_thumbnail();
             if ( $rearrange['has_post_thumbnail'] ) {
-                $image = get_the_post_thumbnail_url( $post->ID, 'full' );
+                $image = get_the_post_thumbnail_url( $post->ID, 'rectangle-ogp' );
                 $imgsize = rearrange_getimagesize( $image );
                 // $imgsize = getimagesize( $image );
                 if ( 200 <= $imgsize[0] && 200 <= $imgsize[1] ) {

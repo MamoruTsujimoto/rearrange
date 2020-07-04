@@ -140,6 +140,7 @@ add_action( 'after_setup_theme', function() {
   add_image_size( 'rectangle-small',  184, 117, true ); // 個別記事アイキャッチ SP
   add_image_size( 'rectangle-medium', 368, 234, true ); // 個別記事アイキャッチ PC、関連記事 長方形PC、
   add_image_size( 'rectangle-large',  600, 358, true ); // 関連記事 長方形SP
+  add_image_size( 'rectangle-ogp',  1200, 630, true ); // OGP IMAGE
 
   /* headerでの投稿とコメントのRSSフィードのリンクを有効にします */
   add_theme_support( 'automatic-feed-links' );
