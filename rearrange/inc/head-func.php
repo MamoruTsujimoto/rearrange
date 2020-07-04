@@ -152,7 +152,9 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
             $facebook_ogp .= '<meta property="og:site_name" content="'.$rearrange['site_name'].'" />'."\n";
             $facebook_ogp .= '<meta property="og:title" content="'.$rearrange['meta_title'].'" />'."\n";
             $facebook_ogp .= '<meta property="og:description" content="'.$rearrange['meta_description'].'" />'."\n";
-            $facebook_ogp .= '<meta roperty="og:image" content="'.$image.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:image" content="'.$image.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:image:width" content="'.$width.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:image:height" content="'.$height.'" />'."\n";
             $facebook_ogp .= '<meta property="og:locale" content="ja_JP" />'."\n";
             if ( '' !== $rearrange['head_tag']['facebook_ogp_app_id'] ) {
                 $facebook_ogp .= '<meta property="fb:app_id" content="'.$rearrange['head_tag']['facebook_ogp_app_id'].'" />'."\n";
