@@ -147,17 +147,17 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
         $rearrange['ogp_img_height'] = $height;
 
         if ( isset( $rearrange['head_tag']['facebook_ogp'] ) ) {
-            $facebook_ogp  = '<meta property="og:type" content="'.$type.'" />';
-            $facebook_ogp .= '<meta property="og:url" content="'.$url.'" />';
-            $facebook_ogp .= '<meta property="og:site_name" content="'.$rearrange['site_name'].'" />';
-            $facebook_ogp .= '<meta property="og:title" content="'.$rearrange['meta_title'].'" />';
-            $facebook_ogp .= '<meta property="og:description" content="'.$rearrange['meta_description'].'" />';
-            $facebook_ogp .= '<meta roperty="og:image" content="'.$image.'" />';
-            $facebook_ogp .= '<meta property="og:image:width" content="'.$width.'" />';
-            $facebook_ogp .= '<meta property="og:image:height" content="'.$height.'" />';
-            $facebook_ogp .= '<meta property="og:locale" content="ja_JP" />';
+            $facebook_ogp  = '<meta property="og:type" content="'.$type.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:url" content="'.$url.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:site_name" content="'.$rearrange['site_name'].'" />'."\n";
+            $facebook_ogp .= '<meta property="og:title" content="'.$rearrange['meta_title'].'" />'."\n";
+            $facebook_ogp .= '<meta property="og:description" content="'.$rearrange['meta_description'].'" />'."\n";
+            $facebook_ogp .= '<meta roperty="og:image" content="'.$image.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:image:width" content="'.$width.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:image:height" content="'.$height.'" />'."\n";
+            $facebook_ogp .= '<meta property="og:locale" content="ja_JP" />'."\n";
             if ( '' !== $rearrange['head_tag']['facebook_ogp_app_id'] ) {
-                $facebook_ogp .= '<meta property="fb:app_id" content="'.$rearrange['head_tag']['facebook_ogp_app_id'].'" />';
+                $facebook_ogp .= '<meta property="fb:app_id" content="'.$rearrange['head_tag']['facebook_ogp_app_id'].'" />'."\n";
             }
             echo $facebook_ogp;
         }
