@@ -170,7 +170,8 @@
   &-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     margin: 0 0 50px;
 
     @media #{$middle} {
