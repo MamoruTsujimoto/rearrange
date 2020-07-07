@@ -1,10 +1,10 @@
 // Headings
 h1 {
-  @include font-size(32,50);
+  @include font-size(32,44);
 }
 
 h2 {
-  @include font-size(22,50);
+  @include font-size(22,34);
 }
 
 h3 {
@@ -16,11 +16,11 @@ h4 {
 }
 
 h5 {
-  @include font-size(14,28);
+  @include font-size(14,26);
 }
 
 h6 {
-  @include font-size(14,28);
+  @include font-size(12,24);
 }
 
 // Paragraph Text
@@ -75,7 +75,7 @@ p {
             font-weight: bold;
           }
         }
-    
+
         &-notation {
           dt {
             @include font-size(14,26);
@@ -85,7 +85,7 @@ p {
             @include font-size(14,26);
           }
         }
-    
+
         &-profile {
           p {
             margin: 0;
@@ -129,7 +129,7 @@ p {
             @include font-size(18,36);
           }
         }
-    
+
         &-profile {
           @include font-size(16,30);
         }
@@ -170,7 +170,7 @@ p {
 
       a {
         @include font-size(16,40);
-        
+
         text-decoration: underline;
       }
     }
@@ -207,7 +207,7 @@ p {
 
     &-comment {
       .member {
-        &-name {        
+        &-name {
           dt {
             @include font-size(20,32);
 
@@ -218,7 +218,7 @@ p {
         &-notation {
           dt {
             @include font-size(12,18);
-            
+
           }
 
           dd {
