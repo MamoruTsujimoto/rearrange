@@ -41,8 +41,11 @@ $custom_post = new WP_Query($args);
           $id = get_the_ID();
           $thumbnail = get_the_post_thumbnail_url($id);
           $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
+          $zoom = get_field('post_eyecatch_zoom') == 'true' ? ' zoom' : '';
           $position = !empty(get_field('post_eyecatch_position')) ? ' '.get_field('post_eyecatch_position') : '';
-          echo '<div id="new-story-image" class="lazyload'.$outline.$position.'" style="background-image: url('.$thumbnail.')" data-bg="'.$thumbnail.'"></div>'."\n";
+          echo '<div id="new-story-image">'."\n";
+          echo '<div class="new-image lazyload'.$outline.$position.$zoom.'" style="background-image: url('.$thumbnail.')" data-bg="'.$thumbnail.'"></div>'."\n";
+          echo '</div>'."\n";
         } else {
           echo '<div id="new-story-image" class="no-image lazyload"></div>'."\n";
         }

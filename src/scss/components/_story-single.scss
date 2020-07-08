@@ -24,6 +24,22 @@
         text-align: center;
         color: #333;
       }
+
+      h1 {
+        display: block;
+        margin: 40px 0 35px;
+        color: #404040;
+        text-align: center;
+        font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+        letter-spacing: .1em;
+
+        @media #{$small} {
+          margin: 40px 0 15px;
+          padding: 0 20px;
+
+          @include font-size(25,37);
+        }
+      }
     }
 
     footer {
@@ -59,14 +75,6 @@
       margin-top: .8em;
     }
 
-    h1 {
-      display: block;
-      margin: 40px 0 35px;
-      color: #404040;
-      text-align: center;
-      font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-      letter-spacing: .1em;
-    }
 
     &-eyecatch {
       margin-top: 10px;

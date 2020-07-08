@@ -83,5 +83,16 @@
         }
       }
     }
+
+    &-image {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .aligncenter > figcaption {
+        text-align: center;
+      }
+    }
   }
 }
