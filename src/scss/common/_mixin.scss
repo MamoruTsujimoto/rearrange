@@ -33,6 +33,24 @@
   line-height: $line-size;
 }
 
+@mixin lineHeightCrop($size:12, $line:24) {
+  $line-size: $line / $size + 0.3;
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: calc((1 - #{$line-size}) * .5em);
+    content: "";
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: calc((1 - #{$line-size}) * .5em);
+    content: "";
+  }
+ }
+
 @mixin mq($breakpoint: pc_lg, $rule: min, $subtraction: false) {
   $breakpoint: map_get($mq-breakpoints, $breakpoint);
   @if $rule == max and $subtraction {

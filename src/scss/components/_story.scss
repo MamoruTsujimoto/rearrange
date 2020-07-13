@@ -1,5 +1,9 @@
 .story {
   &-past {
+    opacity: 0;
+    transform: translateY(50px);
+    transition-duration: .6s;
+
     article {
       position: relative;
       width: 100%;
@@ -89,6 +93,11 @@
       .story-publish {
         color: #4B4B4B;
       }
+    }
+
+    &.active {
+      opacity: 1;
+      transform: translate(0, 0);
     }
   }
 

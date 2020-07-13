@@ -5,6 +5,30 @@ $(function() {
 window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
+
+  const fadeIn = (target) => {
+    target.classList.add('active');
+  };
+
+  const observeUse = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log(entry);
+        fadeIn(entry.target);
+      }
+    });
+  };
+
+  const storyPastIsObservers = document.querySelectorAll('.story-past');
+  const storyPastOptions = {
+    rootMargin: '-30% 0px',
+  };
+  const storyPastObserver = new IntersectionObserver(observeUse, storyPastOptions);
+  storyPastIsObservers.forEach(isObserver => {
+    storyPastObserver.observe(isObserver);
+  });
+
+  document.querySelector('.single article').classList.add('active');
 }
 
 // MENU

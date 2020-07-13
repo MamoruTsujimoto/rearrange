@@ -139,7 +139,6 @@ $margin-max: 100;
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100%;
   min-height: 100vh;
   transition: transform .2s ease-in-out,filter .2s ease-in-out,-webkit-transform .4s ease-in-out,-webkit-filter .4s ease-in-out;
 }
@@ -149,7 +148,6 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  // height: 100%;
 
   @media #{$small} {
     max-width: 100%;
@@ -166,6 +164,11 @@ main {
       filter: blur(4px);
     }
   }
+}
+
+.single main {
+  max-width: 100%;
+  margin: 0;
 }
 
 #main-global {

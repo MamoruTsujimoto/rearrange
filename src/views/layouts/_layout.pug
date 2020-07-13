@@ -38,8 +38,8 @@ html(lang="ja")
   body(class=bodyClass)
     div#global-wrapper
       block content
-      block scripts
       include /layouts/_footer
     include /component/_loading
     include /component/_back-content
     include ../includes/_scripts
+    block scripts

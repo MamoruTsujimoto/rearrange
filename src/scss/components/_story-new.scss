@@ -31,10 +31,10 @@
             filter: grayscale(0);
 
             &.zoom {
-              animation: anime 100s ease-in 0s;
+              animation: anime 80s ease-in 0s;
 
               @media #{$small} {
-                animation: anime 100s ease-in 0s;
+                animation: anime 80s ease-in 0s;
               }
             }
           }
@@ -187,10 +187,10 @@
         }
 
         &.zoom {
-          animation: anime 100s ease-in 0s;
+          animation: anime 80s ease-in 0s;
 
           @media #{$small} {
-            animation: anime 100s ease-in 0s;
+            animation: anime 80s ease-in 0s;
           }
         }
       }

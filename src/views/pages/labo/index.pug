@@ -33,16 +33,21 @@ block content
   include /layouts/_header
 
   main#labo
-    header.container
-      h2.container__headline Wanna see something neat?
-    section.container.hero
-      .hero__inner
-        .hero__images
-          img.hero__image(
-            src="https://images.unsplash.com/photo-1508781197106-d8c535dcf276?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1200&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-          )
-        .hero__content
-          .hero__headline
-            span How Neat is That!!?
-    footer.container
-      h2.container__headline That's pretty neat.
+    div.labo-wrapper
+      - for (var i=1; i<8; i++)
+        - var x = i;
+        section.labo-section
+          h1 Secttion #{x}
+          div.labo-section-wrapper
+            div.labo-section-block.box.green
+            div.labo-section-block.box.orange
+            div.labo-section-block.box.green
+            div.labo-section-block.box.orange
+            div.labo-section-block.box.green
+            div.labo-section-block.box.orange
+
+block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js")
+  script(src=dir+'assets/js/labo.js')

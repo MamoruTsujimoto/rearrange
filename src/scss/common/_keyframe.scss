@@ -40,3 +40,17 @@
     transform: scale(1) ;
   }
 }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  50% {
+    //transform: scale(1.5) ;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

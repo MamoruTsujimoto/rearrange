@@ -8,6 +8,10 @@
     margin: 0 auto;
     border: none;
 
+    &.active {
+      animation: fadeUp 1s;
+    }
+
     @media #{$small} {
       width: 100%;
     }
@@ -288,6 +292,10 @@
           border: 3px solid rgba(0,0,0,0.1);
         }
       }
+
+      video {
+        width: 100%;
+      }
     }
 
     &-meta {
@@ -344,9 +352,6 @@
       }
 
       &-tag {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
 
         @include font-size(12,24);
@@ -365,11 +370,9 @@
           }
 
           .tag {
-            margin: 0 10px;
-
             a {
               display: block;
-              padding: 5px 10px;
+              padding: 3px 15px;
             }
           }
         }
@@ -458,6 +461,103 @@
             }
           }
         }
+      }
+    }
+  }
+
+  &-footer {
+    &-related {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin: 50px 0 53px;
+      background-color: #000;
+      overflow: hidden;
+
+      &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 980px;
+        margin: 0 auto;
+        padding: 40px;
+        z-index: 2;
+
+        @media #{$small} {
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      &-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 600px;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.5);
+        }
+      }
+
+      &-box {
+        margin: 5px;
+        padding: 5px;
+        width: calc(100% / 2 - 10px);
+        height: 100px;
+        background-color: rgba(255,255,255,.8);
+
+        &-figure {
+          width: 180px;
+          height: 90px;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+
+      .heading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        z-index: 2;
+
+        @include font-size(12,12);
+
+        letter-spacing: .15em;
+      }
+    }
+    &-video {
+      position: relative;
+      margin: 50px 0;
+      width: 100%;
+      height: 70rem;
+      overflow: hidden;
+
+      p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        height: 50px;
+        margin: auto;
+        color: #fff;
+      }
+
+      video {
+        width: 100%;
       }
     }
   }
