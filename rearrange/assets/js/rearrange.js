@@ -21,14 +21,17 @@ window.onload = function() {
 
   const storyPastIsObservers = document.querySelectorAll('.story-past');
   const storyPastOptions = {
-    rootMargin: '-30% 0px',
+    rootMargin: '0% 0px',
   };
   const storyPastObserver = new IntersectionObserver(observeUse, storyPastOptions);
   storyPastIsObservers.forEach(isObserver => {
     storyPastObserver.observe(isObserver);
   });
 
-  document.querySelector('.single article').classList.add('active');
+  const singleArticle = document.querySelector('.single article');
+  if(singleArticle !== null) {
+    singleArticle.classList.add('active');
+  }
 }
 
 // MENU
