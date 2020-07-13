@@ -2,7 +2,7 @@
   .wp {
     &-block {
       &-embed {
-        margin: 50px 0;
+        margin: 50px auto;
 
         & + * {
           margin-top: 0;
@@ -35,11 +35,10 @@
 
       &-columns {
         display: flex;
-        margin: 50px;
+        margin: 50px auto;
 
         @media #{$small} {
           display: block;
-          margin: 0;
         }
       }
 

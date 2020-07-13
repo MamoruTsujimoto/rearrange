@@ -4,8 +4,6 @@
   }
 
   .article {
-    width: 980px;
-    margin: 0 auto;
     border: none;
 
     &.active {
@@ -160,13 +158,20 @@
     }
 
     &-body {
-      @media #{$small} {
-        padding: 0 20px;
+      > * {
+        width: 980px;
+        margin: 0 auto;
+
+        @media #{$small} {
+          width: calc(100% - 40px);
+          margin-right: 20px;
+          margin-left: 20px;
+        }
       }
 
       hr {
         position: relative;
-        margin: 40px 0;
+        margin: 40px auto;
         border: 0;
         height: 1px;
         text-align: center;
@@ -225,7 +230,11 @@
       }
 
       p {
+        margin-top: 1em;
+        margin-bottom: 1em;
+
         @include font-size(17,32);
+
         letter-spacing: .025em;
 
         &+h2,&+h3,&+h4,&+h5,&+h6 {
@@ -234,7 +243,7 @@
       }
 
       pre {
-        margin: 20px 0;
+        margin: 20px auto;
         padding: 10px 10px;
         background-color: #242424;
         color: #fff;
@@ -249,7 +258,7 @@
       }
 
       ul,ol {
-        margin: 20px 0;
+        margin: 20px auto;
         padding-left: 30px;
         list-style: circle;
 
@@ -259,8 +268,7 @@
       }
 
       table {
-        width: 100%;
-        margin: 20px 0;
+        margin: 20px auto;
         border-collapse: collapse;
 
         caption {
@@ -295,6 +303,10 @@
 
       video {
         width: 100%;
+
+        @media #{$small} {
+          width: calc(100% - 40px);
+        }
       }
     }
 
