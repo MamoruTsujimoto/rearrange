@@ -1,0 +1,22 @@
+.single {
+  .lwptoc {
+    .lwptoc_i {
+      .lwptoc_header {
+        color: $color-tertiary;
+      }
+
+      a {
+        color: $color-tertiary;
+
+        &:visited {
+          color: $color-tertiary;
+        }
+
+        &:hover {
+          color: $color-tertiary;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

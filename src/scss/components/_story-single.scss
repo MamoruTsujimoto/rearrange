@@ -198,7 +198,7 @@
 
       a {
         position: relative;
-        padding: 0 20px 1px 4px;
+        padding: 0 4px 1px 4px;
         text-decoration: underline;
         color: #d57339;
         transition: all 0.2s ease-out;
@@ -213,30 +213,35 @@
             color: #fff;
           }
         }
+        &[target="_blank"] {
+          padding: 0 20px 1px 4px;
 
-        &:after {
-          content: "\e900";
-          position: absolute;
-          top: 3px;
-          right: 3px;
-          font-family: 'icomoon' !important;
-          font-style: normal;
-          font-weight: normal;
-          font-variant: normal;
+          &:after {
+            content: "\e900";
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            font-family: 'icomoon' !important;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
 
-          @include font-size(12,12);
+            @include font-size(12,12);
 
-          color: #333;
+            color: #333;
 
-          text-transform: none;
-          line-height: 1;
+            text-transform: none;
+            line-height: 1;
 
-          /* Better Font Rendering =========== */
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
 
           &:hover {
-            color: #fff;
+            &:after {
+              color: #fff;
+            }
           }
         }
       }
