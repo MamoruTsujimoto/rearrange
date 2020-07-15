@@ -29,7 +29,8 @@
 
       h1 {
         display: block;
-        margin: 40px 0 35px;
+        margin: 40px auto 35px;
+        width: $width-single;
         color: #404040;
         text-align: center;
         font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
@@ -79,12 +80,12 @@
 
 
     &-eyecatch {
-      margin-top: 10px;
+      margin: 10px auto 0;
       transition: 0.5s;
 
       &-image {
         width: 100%;
-        height: 550px;
+        height: 650px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -159,7 +160,7 @@
 
     &-body {
       > * {
-        width: 980px;
+        width: $width-single;
         margin: 0 auto;
 
         @media #{$small} {
@@ -410,7 +411,7 @@
 
     &-single {
       &-navigation {
-        width: 980px;
+        width: $width-single;
         margin: 50px auto;
 
         @media #{$small} {
@@ -510,7 +511,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        width: 980px;
+        width: $width-single;
         margin: 0 auto;
         padding: 40px;
         z-index: 2;
