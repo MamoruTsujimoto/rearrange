@@ -9,6 +9,7 @@
   }
 
   #wellcome-to {
+    position: relative;
     padding: 22px 20px 20px;
 
     h1 {
@@ -24,8 +25,8 @@
 
     .lizard {
       position: absolute;
-      top: -8px;
-      right: 0;
+      left: 106px;
+      bottom: -1px;
       width: 20px;
     }
   }
