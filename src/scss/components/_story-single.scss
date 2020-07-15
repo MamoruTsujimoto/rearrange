@@ -38,6 +38,7 @@
 
         @media #{$small} {
           margin: 40px 0 15px;
+          width: 100%;
           padding: 0 20px;
 
           @include font-size(25,37);
@@ -91,7 +92,8 @@
         background-size: cover;
 
         &.outline {
-          border: 1px solid $color-border;
+          border-top: 1px solid $color-border;
+          border-bottom: 1px solid $color-border;
           transition: 0.5s;
 
           @media #{$small} {
