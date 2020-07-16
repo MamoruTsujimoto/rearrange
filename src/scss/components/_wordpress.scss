@@ -115,6 +115,7 @@
           margin-bottom: 50px;
 
           @media #{$small} {
+            display: block;
             grid-template-columns: calc(50% - 10px) calc(50% - 10px);
             column-gap: 14px;
           }
@@ -133,6 +134,22 @@
 
               &:first-of-type {
                 margin-top: 0;
+              }
+
+              @media #{$small} {
+                @include font-size(15,27);
+
+                &:first-of-type {
+                  margin-top: 1em;
+                }
+
+                &:before {
+                  content: unset;
+                }
+
+                &:after {
+                  content: unset;
+                }
               }
             }
           }
