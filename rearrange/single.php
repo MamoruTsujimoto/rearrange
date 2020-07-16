@@ -5,8 +5,8 @@ get_header();
 
 $cat = get_the_category($post->ID)[0];
 $cat_link = get_category_link($cat->term_id);
-$get_the_time = get_the_time();
-$get_the_modified_date = get_the_modified_date();
+$get_the_time = get_the_time('F d, Y');
+$get_the_modified_date = get_the_modified_date('F d, Y');
 $posted = 'Posted on '.get_post_time('F d, Y');
 $updated = 'Updated on '.get_the_modified_time('F d, Y');
 ?>
