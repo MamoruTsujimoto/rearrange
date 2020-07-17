@@ -2,7 +2,6 @@
 global $rearrange, $post;
 
 get_header();
-
 $cat = get_the_category($post->ID)[0];
 $cat_link = get_category_link($cat->term_id);
 $get_the_time = get_the_time('F d, Y');

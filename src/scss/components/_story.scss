@@ -156,6 +156,11 @@
       filter: none;
     }
 
+    &.other {
+      background-position: center center;
+      background-size: 100%;
+    }
+
     &.outline {
       border: 1px solid #DDDDDD;
 

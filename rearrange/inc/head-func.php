@@ -64,50 +64,50 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
         $height = '';
 
         if ( is_singular() ) {
-            $type = 'article';
-            if ( isset( $rearrange['page_url'] ) ) {
-                $url = $rearrange['page_url'];
+          $type = 'article';
+          if ( isset( $rearrange['page_url'] ) ) {
+            $url = $rearrange['page_url'];
+          } else {
+            $url = get_permalink();
+          }
+          $rearrange['has_post_thumbnail'] = has_post_thumbnail();
+          if ( $rearrange['has_post_thumbnail'] ) {
+            $image = get_the_post_thumbnail_url( $post->ID, 'rectangle-ogp' );
+            $imgsize = rearrange_getimagesize( $image );
+            // $imgsize = getimagesize( $image );
+            if ( 200 <= $imgsize[0] && 200 <= $imgsize[1] ) {
+              $width = $imgsize[0];
+              $height = $imgsize[1];
             } else {
-                $url = get_permalink();
+              if ( '' !== $rearrange['head_tag']['ogp_defaul_img'] ) {
+                $image = $rearrange['head_tag']['ogp_defaul_img'];
+                if ( isset( $rearrange['head_tag']['facebook_ogp'] ) ) {
+                  $imgsize = rearrange_getimagesize( $image );
+                  // $imgsize = getimagesize( $image );
+                  $width = $imgsize[0];
+                  $height = $imgsize[1];
+                }
+              } else {
+                $image = get_theme_file_uri( '/images/ogp-rectangle.png' );
+                $width = '1200';
+                $height = '630';
+              }
             }
-            $rearrange['has_post_thumbnail'] = has_post_thumbnail();
-            if ( $rearrange['has_post_thumbnail'] ) {
-                $image = get_the_post_thumbnail_url( $post->ID, 'rectangle-ogp' );
+          } else {
+            if ( '' !== $rearrange['head_tag']['ogp_defaul_img'] ) {
+              $image = $rearrange['head_tag']['ogp_defaul_img'];
+              if ( isset( $rearrange['head_tag']['facebook_ogp'] ) ) {
                 $imgsize = rearrange_getimagesize( $image );
                 // $imgsize = getimagesize( $image );
-                if ( 200 <= $imgsize[0] && 200 <= $imgsize[1] ) {
-                    $width = $imgsize[0];
-                    $height = $imgsize[1];
-                } else {
-                    if ( '' !== $rearrange['head_tag']['ogp_defaul_img'] ) {
-                        $image = $rearrange['head_tag']['ogp_defaul_img'];
-                        if ( isset( $rearrange['head_tag']['facebook_ogp'] ) ) {
-                            $imgsize = rearrange_getimagesize( $image );
-                            // $imgsize = getimagesize( $image );
-                            $width = $imgsize[0];
-                            $height = $imgsize[1];
-                        }
-                    } else {
-                        $image = get_theme_file_uri( '/images/ogp-rectangle.png' );
-                        $width = '1200';
-                        $height = '630';
-                    }
-                }
+                $width = $imgsize[0];
+                $height = $imgsize[1];
+              }
             } else {
-                if ( '' !== $rearrange['head_tag']['ogp_defaul_img'] ) {
-                    $image = $rearrange['head_tag']['ogp_defaul_img'];
-                    if ( isset( $rearrange['head_tag']['facebook_ogp'] ) ) {
-                        $imgsize = rearrange_getimagesize( $image );
-                        // $imgsize = getimagesize( $image );
-                        $width = $imgsize[0];
-                        $height = $imgsize[1];
-                    }
-                } else {
-                    $image = get_theme_file_uri( '/images/ogp-rectangle.png' );
-                    $width = '1200';
-                    $height = '630';
-                }
+              $image = get_theme_file_uri( '/images/ogp-rectangle.png' );
+              $width = '1200';
+              $height = '630';
             }
+          }
         } elseif ( is_archive() ) {
             $type = 'website';
             $url = $rearrange['home_url'];

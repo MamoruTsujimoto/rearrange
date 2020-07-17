@@ -46,6 +46,8 @@ class Widget_Top_Contents extends WP_Widget {
           $term_id = get_the_category()[0]->term_id;
           $use_category_figure = get_field('use_category_figure', 'term_'.$term_id);
           $classname = ($use_category_figure === 'true') ? 'other' : '';
+          $outline = get_field('category_figure_outline', 'term_'.$term_id);
+          $outline_class = ($outline === 'true') ? ' outline' : '';
           ?>
           <article id="story-<?php echo get_the_ID(); ?>" class="<?php echo $classname; ?>">
             <?php $url = get_permalink(); ?>
@@ -53,7 +55,7 @@ class Widget_Top_Contents extends WP_Widget {
               <?php
                 if ( $use_category_figure !== 'false' &&  $use_category_figure !== null) {
                   $thumbnail = get_field('category_figure', 'term_'.$term_id);
-                  echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                  echo '<div class="story-figure figure'.$outline_class.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
                 } else {
                   if ( has_post_thumbnail() ) {
                     $id = get_the_ID();
