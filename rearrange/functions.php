@@ -307,3 +307,17 @@ function modified_date_format(){
 function my_custom_post_type_permalinks_set($termlink, $term, $taxonomy){
   return str_replace('/'.$taxonomy.'/', '/', $termlink);
 }
+
+
+/*---------------------------------------------------------------------------
+ * SVG Upload Enabled
+ *---------------------------------------------------------------------------*/
+function add_file_types_to_uploads($file_types){
+
+  $new_filetypes = array();
+  $new_filetypes['svg'] = 'image/svg+xml';
+  $file_types = array_merge($file_types, $new_filetypes );
+
+  return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
