@@ -71,7 +71,11 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
             $url = get_permalink();
           }
           $rearrange['has_post_thumbnail'] = has_post_thumbnail();
-          if ( $rearrange['has_post_thumbnail'] ) {
+          if (preg_match("/amazonaws/",get_the_post_thumbnail_url( $post->ID, 'rectangle-ogp' ))) {
+            $image = get_the_post_thumbnail_url( $post->ID, 'rectangle-ogp' );
+            $width = '1200';
+            $height = '630';
+          } elseif ( $rearrange['has_post_thumbnail'] ) {
             $image = get_the_post_thumbnail_url( $post->ID, 'rectangle-ogp' );
             $imgsize = rearrange_getimagesize( $image );
             // $imgsize = getimagesize( $image );

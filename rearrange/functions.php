@@ -218,8 +218,9 @@ add_filter( 'post_class', function( $post_class ) {
  *---------------------------------------------------------------------------*/
 if ( ! function_exists( 'rearrange_getimagesize' ) ) :
   function rearrange_getimagesize( $image ) {
-
-    if ( false !== strpos( $image, '/uploads/' ) ) {
+    if (preg_match("/amazonaws/",$image)) {
+      return $image;
+    } elseif ( false !== strpos( $image, '/uploads/' ) ) {
       preg_match( '/\/uploads(.+)$/', $image, $matches );
       return getimagesize( wp_upload_dir()['basedir'] . $matches[1] );
     } else {
@@ -237,6 +238,7 @@ endif;
 if ( isset( $rearrange['entry']['remove_wpautop'] ) && true === $rearrange['entry']['remove_wpautop'] ) {
   remove_filter( 'the_content', 'wpautop' );
 }
+
 
 /*---------------------------------------------------------------------------
  * カテゴリの整形
@@ -262,6 +264,7 @@ function init_category() {
   return $category;
 }
 
+
 /*---------------------------------------------------------------------------
  * 子カテゴリ判定
  *---------------------------------------------------------------------------*/
@@ -274,6 +277,7 @@ function in_child_category( $cat_data ) {
 
 	return false;
 }
+
 
 /*---------------------------------------------------------------------------
  * 特定カテゴリの検索エンジンブロック
@@ -294,6 +298,7 @@ function noindex_for_category() {
   }
 }
 
+
 /*---------------------------------------------------------------------------
  * 更新日英語表記
  *---------------------------------------------------------------------------*/
@@ -302,6 +307,7 @@ function modified_date_format(){
   $modified_date_format = get_post_modified_time(get_option( 'date_format' ));
   return $modified_date_format;
 }
+
 
 //add_filter('term_link', 'my_custom_post_type_permalinks_set', 10, 3);
 function my_custom_post_type_permalinks_set($termlink, $term, $taxonomy){
