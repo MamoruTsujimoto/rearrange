@@ -332,6 +332,24 @@
           width: calc(100% - 40px);
         }
       }
+
+      figure {
+        & + * {
+          margin-top: 50px;
+
+          @media #{$small} {
+            margin-top: 30px;
+          }
+        }
+
+        figcaption {
+          padding: 10px 5px;
+
+          @include font-size(12,12);
+
+          text-align: right;
+        }
+      }
     }
 
     &-meta {
