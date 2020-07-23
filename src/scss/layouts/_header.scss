@@ -29,5 +29,30 @@
       left: 106px;
       width: 20px;
     }
+
+    #navigation {
+      ul {
+        display: flex;
+
+        li {
+          a {
+            display: block;
+            padding: 5px 15px;
+            letter-spacing: .4em;
+            transition: all .4s;
+            color: #747B7C;
+
+            &:hover {
+              color: #404040;
+            }
+          }
+
+          @media #{$small} {
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }

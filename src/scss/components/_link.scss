@@ -1,0 +1,20 @@
+.underline {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background-color: #D0D0D4;
+    transition: all .4s;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+}

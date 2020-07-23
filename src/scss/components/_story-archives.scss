@@ -1,0 +1,40 @@
+.story-archives {
+  width: 980px;
+
+  &-block {
+    margin: 0 0 50px;
+  }
+
+  &-category {
+    margin: 0 0 15px;
+
+    @include font-size(24,24);
+
+    font-family: $font-family-raleway;
+
+    span {
+      @include font-size(12,12);
+
+      vertical-align: middle;
+    }
+  }
+
+  &-list {
+    margin: 0 0 8px;
+
+    a {
+      @include font-size(15,24);
+
+      span {
+        @include font-size(12,12);
+
+        vertical-align: middle;
+
+        &:before {
+          content: '-';
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

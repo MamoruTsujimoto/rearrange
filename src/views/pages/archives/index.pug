@@ -27,18 +27,15 @@ block append meta
 
 block navi
   -var pageID = 'page-top';
-  -var bodyClass = 'top';
 
 block content
   include /layouts/_header
   main
-    //- include /component/_back-content
-
-    include /component/_story-new
-
-    include /component/_story-diary
-
-    include /component/_story-wordpress
-
-    include /component/_story-raspberry
-
+    section.story-archives
+      h1.section-title Archives
+      each info_cat in info_category
+        div.story-archives-block
+          div.story-archives-category #{info_cat.name} <span>- 20 Articles -</span>
+          - for (var i=1; i<10; i++)
+            div.story-archives-list
+              a(href="/post/" class="underline") 【個人事業者】持続化給付金の申請で確定申告書第一表（控え）に収受印がない場合<span>July 23, 2020</span>

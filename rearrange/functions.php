@@ -127,6 +127,7 @@ add_action( 'after_setup_theme', function() {
   /* カスタムメニューの登録 */
   register_nav_menus( [
     'global' => 'グローバルナビ',
+    'header' => 'ヘッダー',
     'footer' => 'フッター'
   ] );
 
@@ -297,6 +298,24 @@ function noindex_for_category() {
     }
   }
 }
+
+/*---------------------------------------------------------------------------
+ * カテゴリ並び替え
+ *---------------------------------------------------------------------------*/
+function category_count_sort( $cat_data, $order = 'desc' ) {
+  if($order === 'desc') {
+    usort($cat_data, function ($a, $b) {
+      return $a->category_count > $b->category_count ? -1 : 1;
+    });
+  }else{
+    usort($cat_data, function ($a, $b) {
+      return $a->category_count < $b->category_count ? -1 : 1;
+    });
+  }
+
+  return $cat_data;
+}
+
 
 
 /*---------------------------------------------------------------------------

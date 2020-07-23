@@ -40,4 +40,5 @@ $rearrange['home_url'] = esc_url( get_home_url( null, '/' ) );
   <div id="global-wrapper">
   <!-- header -->
   <?php get_template_part('./components/global-header'); ?>
+  <?php get_template_part('./components/navigation'); ?>
   <main>
