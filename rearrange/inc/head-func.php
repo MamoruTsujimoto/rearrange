@@ -92,7 +92,7 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
                   $height = $imgsize[1];
                 }
               } else {
-                $image = get_theme_file_uri( '/images/ogp-rectangle.png' );
+                $image = get_theme_file_uri( '/assets/img/rearrange.jpg' );
                 $width = '1200';
                 $height = '630';
               }
@@ -107,7 +107,7 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
                 $height = $imgsize[1];
               }
             } else {
-              $image = get_theme_file_uri( '/images/ogp-rectangle.png' );
+              $image = get_theme_file_uri( '/assets/img/rearrange.jpg' );
               $width = '1200';
               $height = '630';
             }
@@ -124,7 +124,7 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
                     $height = $imgsize[1];
                 }
             } else {
-                $image = get_theme_file_uri( '/images/ogp-square.png' );
+                $image = get_theme_file_uri( '/assets/img/rearrange.jpg' );
                 $width = '600';
                 $height = '600';
             }
@@ -141,7 +141,7 @@ if ( ! function_exists( 'rearrange_the_ogp_tags' ) ) :
                     $height = $imgsize[1];
                 }
             } else {
-                $image = get_theme_file_uri( '/images/ogp-square.png' );
+                $image = get_theme_file_uri( '/assets/img/rearrange.jpg' );
                 $width = '600';
                 $height = '600';
             }
