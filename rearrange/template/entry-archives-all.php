@@ -18,7 +18,7 @@ $categories = category_count_sort($rearrange['categories']);
       <a href="<?php echo $cat_url; ?>"><?php echo $cat_name; ?></a> <span>- <?php echo $cat_count; ?> Articles -</span>
     </div>
     <?php
-    $args = array( 'cat'=> $cat_id, 'order'=> 'DESC' );
+    $args = array( 'cat'=> $cat_id, 'posts_per_page' => -1, 'order'=> 'DESC' );
     $custom_post = new WP_Query($args);
 
     if ( $custom_post->have_posts() ) :
