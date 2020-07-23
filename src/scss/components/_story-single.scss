@@ -79,6 +79,12 @@
       margin-top: .8em;
     }
 
+    h3 {
+      &:before {
+        width: 5%;
+      }
+    }
+
 
     &-eyecatch {
       margin: 10px auto 0;

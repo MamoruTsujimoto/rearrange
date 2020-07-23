@@ -8,19 +8,19 @@ h2 {
 }
 
 h3 {
-  @include font-size(20,32);
+  @include font-size(18,32);
 }
 
 h4 {
-  @include font-size(16,28);
+  @include font-size(14,28);
 }
 
 h5 {
-  @include font-size(14,26);
+  @include font-size(12,26);
 }
 
 h6 {
-  @include font-size(12,24);
+  @include font-size(10,24);
 }
 
 // Paragraph Text

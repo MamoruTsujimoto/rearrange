@@ -23,7 +23,7 @@
       border: 1px solid #2E3336;
     }
 
-    &:nth-of-type(6n) {
+    &:nth-of-type(5n+1) {
       border-right: 1px solid #2E3336;
     }
 
