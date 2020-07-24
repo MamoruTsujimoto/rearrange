@@ -61,7 +61,8 @@ class Widget_Top_Contents extends WP_Widget {
                     $id = get_the_ID();
                     $thumbnail = get_the_post_thumbnail_url($id);
                     $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
-                    echo '<div class="story-figure figure'.$outline.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                    $position = !empty(get_field('post_eyecatch_position_past')) ? ' '.get_field('post_eyecatch_position_past') : '';
+                    echo '<div class="story-figure figure'.$outline.$position.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
                   } else {
                     if ($classname !== 'wordpress') {
                       echo '<div class="story-figure figure no-image"></div>'."\n";
