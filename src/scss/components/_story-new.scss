@@ -26,8 +26,6 @@
 
           #new-story-image .new-image {
             opacity: 1;
-            -webkit-animation: flash 1.5s;
-            animation: flash 1.5s;
             filter: grayscale(0);
 
             &.zoom {
