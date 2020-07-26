@@ -127,6 +127,7 @@ add_action( 'after_setup_theme', function() {
   /* カスタムメニューの登録 */
   register_nav_menus( [
     'global' => 'グローバルナビ',
+    'sidemenu' => 'サイドメニュー',
     'header' => 'ヘッダー',
     'footer' => 'フッター'
   ] );

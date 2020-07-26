@@ -1,25 +1,22 @@
 #overlay {
+  display: none;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
+  right: 0;
+  z-index: 1;
+  width: 350px;
   height: 101vh;
   background: rgba(0, 0, 0, .9);
-  opacity: 0;
-  visibility: hidden;
-  transition: .2s linear;
   overflow: scroll;
 
   &.is-open {
-    opacity: 1;
-    visibility: visible;
+    display: block;
   }
 
   #close {
     position: absolute;
-    top: 22px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     display: inline-block;
     transition: all .4s;
     box-sizing: border-box;
@@ -37,22 +34,7 @@
       -webkit-font-smoothing: antialiased;
       -webkit-transform: translate3d(-1px, 0, 0) rotate(-45deg);
       transform: translate3d(-1px, 0, 0) rotate(-45deg);
-
     }
   }
 }
 
-body {
-  &.is-open {
-    #global-wrapper {
-      position: fixed;
-      top: 5px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: translateY(2%);
-      transform: scale3d(.9,.9,1);
-      filter: blur(3px);
-    }
-  }
-}
