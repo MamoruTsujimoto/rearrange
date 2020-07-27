@@ -182,6 +182,10 @@ html {
 
     #global-wrapper {
       transform: translateX(-350px);
+
+      @media #{$small} {
+        transform: translateX(-100%);
+      }
     }
   }
 }
