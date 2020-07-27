@@ -115,40 +115,46 @@ class Widget_Top_Contents extends WP_Widget {
 	public function form( $instance ) {
 
 		$defaults = [
+      'title' => '',
 			'category'  => '1',
       'count'  => '3',
       'classname' => ''
 		];
     $instance = wp_parse_args( (array) $instance, $defaults );
+    $title = sanitize_text_field( $instance['title'] );
     $selected = $instance['category'];
     $count = $instance['count'];
     $classname = $instance['classname'];
-		?>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'category' ); ?>" class="widget-label">カテゴリ:</label>
-            <?php
-            $args = array(
-              'id' => $this->get_field_id( 'category' ),
-              'name' => $this->get_field_name( 'category' ),
-              'selected' => $selected,
-              'class' => 'widget-form-select'
-            );
-            wp_dropdown_categories($args);
-            ?>
-        </p>
-        <p>
-          <label for="<?php echo $this->get_field_id( 'count' ); ?>" class="widget-label">件数:</label>
-          <input class="widefat widget-form-input" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="number" value="<?php echo esc_attr( $count ); ?>" />
-        </p>
-        <p>
-          <label for="<?php echo $this->get_field_id( 'classname' ); ?>" class="widget-label">クラス名:</label>
-          <input class="widefat widget-form-input" id="<?php echo $this->get_field_id( 'classname' ); ?>" name="<?php echo $this->get_field_name( 'classname' ); ?>" type="text" value="<?php echo esc_attr( $classname ); ?>" />
-        </p>
-        <style>
-        .widget-label {display:block;}
-        .widget-form-select {width:100%;}
-        .widget-form-input {width:100%;}
-        </style>
+    ?>
+    <p>
+      <label for="<?php echo $this->get_field_id( 'title' ); ?>">タイトル:</label>
+      <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id( 'category' ); ?>" class="widget-label">カテゴリ:</label>
+      <?php
+      $args = array(
+        'id' => $this->get_field_id( 'category' ),
+        'name' => $this->get_field_name( 'category' ),
+        'selected' => $selected,
+        'class' => 'widget-form-select'
+      );
+      wp_dropdown_categories($args);
+      ?>
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id( 'count' ); ?>" class="widget-label">件数:</label>
+      <input class="widefat widget-form-input" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="number" value="<?php echo esc_attr( $count ); ?>" />
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id( 'classname' ); ?>" class="widget-label">クラス名:</label>
+      <input class="widefat widget-form-input" id="<?php echo $this->get_field_id( 'classname' ); ?>" name="<?php echo $this->get_field_name( 'classname' ); ?>" type="text" value="<?php echo esc_attr( $classname ); ?>" />
+    </p>
+    <style>
+    .widget-label {display:block;}
+    .widget-form-select {width:100%;}
+    .widget-form-input {width:100%;}
+    </style>
 <?php
 	}
 
@@ -162,7 +168,7 @@ class Widget_Top_Contents extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
     $instance = $old_instance;
-    d($new_instance);
+    $instance['title']  = sanitize_text_field( $new_instance['title'] );
 		$instance['category']  = $new_instance['category'];
     $instance['count']  = $new_instance['count'];
     $instance['classname']  = $new_instance['classname'];
