@@ -1,0 +1,16 @@
+.page-template-page-post-information {
+  #global-wrapper {
+    background: rgba(0, 0, 0, .9);
+  }
+}
+
+#post-information {
+  margin-top: 80px;
+  padding: 60px 50px;
+  background: rgba(0, 0, 0, .9);
+
+  @media #{$small} {
+    padding: 30px 20px;
+  }
+}
+

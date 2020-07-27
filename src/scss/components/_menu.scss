@@ -97,6 +97,14 @@
     margin-top: 50px;
     padding: 0 20px;
 
+    & > div {
+      margin-bottom: 30px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
     .widget-wrap {
       h3 {
         position: relative;
