@@ -154,10 +154,14 @@
         }
 
         &:before {
-          content: '>';
-          margin-right: 5px;
-          color: #B19764;
-          vertical-align: 1px;
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          margin-right: 8px;
+          border: 1px solid #B19764;
+          border-radius: 50%;
+          vertical-align: 2px;
         }
       }
     }
