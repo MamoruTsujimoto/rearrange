@@ -22,8 +22,9 @@ $outline_class = ($outline === 'true') ? ' outline' : '';
           if ( has_post_thumbnail() ) {
             $id = get_the_ID();
             $thumbnail = get_the_post_thumbnail_url($id);
+            $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
             $position = !empty(get_field('post_eyecatch_position')) ? ' '.get_field('post_eyecatch_position') : '';
-            echo '<div class="story-figure figure'.$position.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
+            echo '<div class="story-figure figure'.$outline.$position.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
           } elseif( $use_category_figure !== 'false' &&  $use_category_figure !== null) {
             $thumbnail = get_field('category_figure', 'term_'.$cat_id);
             echo '<div class="story-figure figure other '.$outline_class.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
