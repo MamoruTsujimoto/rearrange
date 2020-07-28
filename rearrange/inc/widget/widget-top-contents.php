@@ -55,21 +55,21 @@ class Widget_Top_Contents extends WP_Widget {
               <?php
                 if ( $use_category_figure !== 'false' &&  $use_category_figure !== null) {
                   $thumbnail = get_field('category_figure', 'term_'.$term_id);
-                  echo '<div class="story-figure figure'.$outline_class.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                  echo '<div class="story-figure lazyload figure'.$outline_class.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
                 } else {
                   if ( has_post_thumbnail() ) {
                     $id = get_the_ID();
                     $thumbnail = get_the_post_thumbnail_url($id);
                     $outline = get_field('post_eyecatch_outline') == 'true' ? ' outline' : '';
                     $position = !empty(get_field('post_eyecatch_position_past')) ? ' '.get_field('post_eyecatch_position_past') : '';
-                    echo '<div class="story-figure figure'.$outline.$position.'" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                    echo '<div class="story-figure lazyload figure'.$outline.$position.'" style="background-image: url('.$thumbnail.')" data-bg="'.$thumbnail.'"></div>'."\n";
                   } else {
                     if ($classname !== 'wordpress') {
-                      echo '<div class="story-figure figure no-image"></div>'."\n";
+                      echo '<div class="story-figure figure lazyload no-image"></div>'."\n";
                     } else {
                       $no_image    = get_theme_file_uri( '/assets/img/wordpress-logo.png' );
                       $thumbnail = $no_image;
-                      echo '<div class="story-figure figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
+                      echo '<div class="story-figure lazyload figure" style="background-image: url('.$thumbnail.')"></div>'."\n";
                     }
                   }
                 }
