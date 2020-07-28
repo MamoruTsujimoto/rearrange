@@ -42,7 +42,8 @@ if ( ! function_exists( 'rearrange_setup_options' ) ) :
 
         // Google Analytics
         set_theme_mod( 'analytics', [
-          'tag' => ''
+          'tag' => '',
+          'tag-noscript' => ''
         ] );
 
         // CSS

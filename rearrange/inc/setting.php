@@ -326,6 +326,20 @@ EOF;
             <input type="hidden" id="analytics-dummy" name="rearrange_analytics[analytics][dummy]" value="" />';
           }, 'rearrange_analytics', 'analytics_tag' );
 
+        /* noscript */
+        add_settings_section( 'analytics_tag_noscript', 'Google Analytics Tag - NoScript',
+          function() {
+            echo '<p>タグは'.htmlspecialchars('<body>').'直下に追加されます。</p>';
+          }, 'rearrange_analytics' );
+
+        add_settings_field( 'noscript', 'noscript',
+          function() {
+            $no_script = $this->rearrange_settings['analytics']['tag-noscript'];
+            echo '
+            <textarea id="tag-noscript" name="rearrange_analytics[analytics][tag-noscript]" cols="60" rows="13" placeholder="ここにnoscriptタグを入力してください">' . $no_script . '</textarea>
+            <input type="hidden" id="analytics-dummy" name="rearrange_analytics[analytics][dummy]" value="" />';
+          }, 'rearrange_analytics', 'analytics_tag_noscript' );
+
         /* ログイン時読み込まない */
         add_settings_field( 'do_not_load', '管理画面にログイン時、タグを読み込まない',
           function() {

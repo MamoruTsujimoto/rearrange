@@ -37,10 +37,8 @@ $rearrange['home_url'] = esc_url( get_home_url( null, '/' ) );
 <?php get_template_part( 'add', 'header' ); ?>
 </head>
 <body <?php body_class(); ?>>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHXDJM6"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <?php get_template_part( 'analytics-noscript' ); ?>
+
   <div id="global-wrapper">
   <!-- header -->
   <?php get_template_part('./components/global-header'); ?>
