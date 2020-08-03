@@ -27,6 +27,11 @@ if ( 'l-column' === $rearrange['column']['position'] ) {
 $rearrange['site_name'] = get_bloginfo( 'name' );
 $rearrange['home_url'] = esc_url( get_home_url( null, '/' ) );
 
+/* Class設定 */
+$class = '';
+if (is_page('post-status')) {
+  $class = 'status';
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +41,7 @@ $rearrange['home_url'] = esc_url( get_home_url( null, '/' ) );
 <?php wp_head(); ?>
 <?php get_template_part( 'add', 'header' ); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class($class); ?>>
   <?php get_template_part( 'analytics-noscript' ); ?>
 
   <div id="global-wrapper">
