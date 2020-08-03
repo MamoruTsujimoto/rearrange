@@ -4,10 +4,14 @@
       span
     #menu-story
       div.widget-wrap
+        h3 pages
+        ul
+          li
+            a(href="/archives") archives
+
+      div.widget-wrap
         h3 story
         ul
           each info_cat in info_category
             li
               a(href="#") #{info_cat.name}
-          - for(var i=0; i <= 100; i++)
-            li test

@@ -13,8 +13,8 @@ add_action( 'widgets_init', function() {
     register_sidebar( [
         'name'          => 'サイドバー',
         'id'            => 'sidebar',
-        'before_widget' => '<div><div class="widget-wrap">',
-        'after_widget'  => '</div></div>',
+        'before_widget' => '<div class="widget-wrap">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
     ] );

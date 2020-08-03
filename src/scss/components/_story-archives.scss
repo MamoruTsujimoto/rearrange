@@ -5,11 +5,27 @@
     width: 100%;
   }
 
-  &-block {
-    margin: 0 0 50px;
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 
     @media #{$small} {
+      display: block;
+    }
+  }
+
+  &-block {
+    width: calc(100% / 2 - 40px);
+    margin: 0 80px 50px 0;
+
+    &:nth-of-type(even) {
+      margin-right: 0;
+    }
+
+    @media #{$small} {
+      margin-right: 0;
       padding: 0 20px;
+      width: 100%;
     }
   }
 
