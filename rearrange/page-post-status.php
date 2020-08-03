@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Post Information
+Template Name: Post Status
 */
 
 global $rearrange;
